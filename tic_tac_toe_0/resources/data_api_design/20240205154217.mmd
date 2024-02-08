@@ -1,0 +1,23 @@
+
+classDiagram
+    class Game {
+        - board: [[u8; 3]; 3]
+        - current_player: u8
+        - winner: Option<u8>
+        +new() Game
+        +make_move(x: usize, y: usize) bool
+        +check_winner() Option<u8>
+    }
+    class SmartContract {
+        - game: Game
+        +initialize() bool
+        +make_move(x: usize, y: usize) bool
+        +get_game_state() Game
+    }
+    class UI {
+        - game: Game
+        +render() void
+        +handle_input(input: String) bool
+    }
+    Game --> SmartContract
+    SmartContract --> UI

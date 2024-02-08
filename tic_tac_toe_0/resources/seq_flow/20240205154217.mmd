@@ -1,0 +1,17 @@
+
+sequenceDiagram
+    participant G as Game
+    participant SC as SmartContract
+    participant UI as UI
+    UI->>SC: get_game_state()
+    SC->>G: get_game_state()
+    G-->>SC: return game_state
+    SC-->>UI: return game_state
+    UI->>G: make_move(x, y)
+    G->>SC: make_move(x, y)
+    SC-->>G: return move_result
+    G-->>UI: return move_result
+    UI->>SC: initialize()
+    SC->>G: initialize()
+    G-->>SC: return init_result
+    SC-->>UI: return init_result
