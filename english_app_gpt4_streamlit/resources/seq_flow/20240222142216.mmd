@@ -1,0 +1,26 @@
+
+sequenceDiagram
+    participant A as App
+    participant UI as StreamlitUI
+    participant F as Flashcards
+    participant Q as Quizzes
+    participant DM as DataManager
+    A->>UI: run()
+    loop Home Screen
+        UI->>UI: display_home()
+    end
+    loop Flashcards Screen
+        UI->>F: load_flashcards()
+        F->>DM: load_data('flashcards.json')
+        DM-->>F: return flashcards
+        UI->>UI: display_flashcards()
+    end
+    loop Quizzes Screen
+        UI->>Q: load_quizzes()
+        Q->>DM: load_data('quizzes.json')
+        DM-->>Q: return quizzes
+        UI->>UI: display_quizzes()
+    end
+    loop Progress Screen
+        UI->>UI: display_progress()
+    end

@@ -1,0 +1,1 @@
+Create English Learning App with flashcards and quizzes using python programming language based on streamlit. Please make sure others can execute directly without introducing additional packages.

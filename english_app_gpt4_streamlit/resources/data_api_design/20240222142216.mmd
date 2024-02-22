@@ -1,0 +1,39 @@
+
+classDiagram
+    class App {
+        +StreamlitUI ui
+        +run() void
+    }
+    class StreamlitUI {
+        +display_home() void
+        +display_flashcards() void
+        +display_quizzes() void
+        +display_progress() void
+    }
+    class Flashcards {
+        -flashcards List
+        +load_flashcards() void
+        +get_random_flashcard() Flashcard
+    }
+    class Flashcard {
+        +term String
+        +definition String
+    }
+    class Quizzes {
+        -quizzes List
+        +load_quizzes() void
+        +get_quiz() Quiz
+    }
+    class Quiz {
+        +questions List
+        +evaluate_answers(answers List) int
+    }
+    class DataManager {
+        +load_data(file_path String) dict
+        +save_progress(progress_data dict) void
+    }
+    App --> StreamlitUI
+    StreamlitUI --> Flashcards
+    StreamlitUI --> Quizzes
+    Flashcards ..> DataManager : <<use>>
+    Quizzes ..> DataManager : <<use>>
