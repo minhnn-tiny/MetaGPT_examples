@@ -1,0 +1,35 @@
+
+classDiagram
+    class Application {
+        +start() void
+    }
+    class User {
+        -id int
+        -username str
+        -progress Progress
+        +login(username: str, password: str)
+        +logout()
+    }
+    class Flashcard {
+        -id int
+        -content str
+        -difficulty_level str
+    }
+    class Quiz {
+        -id int
+        -questions list
+        -difficulty_level str
+    }
+    class Progress {
+        -user_id int
+        -score int
+        -level str
+        +update_score(score: int)
+        +get_level() str
+    }
+    class AdaptiveLearning {
+        +adjust_learning_path(user_progress: Progress)
+    }
+    Application --> User
+    User --> Progress
+    AdaptiveLearning --> Progress

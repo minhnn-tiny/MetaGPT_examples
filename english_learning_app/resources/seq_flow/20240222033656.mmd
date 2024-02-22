@@ -1,0 +1,16 @@
+
+sequenceDiagram
+    participant A as Application
+    participant U as User
+    participant F as Flashcard
+    participant Q as Quiz
+    participant P as Progress
+    participant AL as AdaptiveLearning
+    A->>U: login(username, password)
+    U->>P: update_score(score)
+    P-->>U: return level
+    U->>AL: adjust_learning_path(user_progress)
+    AL-->>U: return adjusted_path
+    U->>F: get_flashcards(difficulty_level)
+    U->>Q: get_quizzes(difficulty_level)
+    U->>U: logout()
