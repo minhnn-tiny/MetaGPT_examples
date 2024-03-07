@@ -1,0 +1,16 @@
+
+sequenceDiagram
+    participant A as App
+    participant UI as StreamlitUI
+    participant WAPI as WeatherAPI
+    A->>UI: search_bar()
+    UI-->>A: location
+    A->>WAPI: get_current_weather(location)
+    WAPI-->>A: current_weather_data
+    A->>UI: display_current_weather(current_weather_data)
+    A->>WAPI: get_hourly_forecast(location)
+    WAPI-->>A: hourly_forecast_data
+    A->>UI: display_hourly_forecast(hourly_forecast_data)
+    A->>WAPI: get_weekly_forecast(location)
+    WAPI-->>A: weekly_forecast_data
+    A->>UI: display_weekly_forecast(weekly_forecast_data)

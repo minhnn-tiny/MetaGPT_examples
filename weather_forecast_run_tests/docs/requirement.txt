@@ -1,0 +1,1 @@
+Create Weather Forecast App with in⁠integration with 3rd party APIet the data. Use python programming language based on Streamlit. Please make sure others can execute directly without introducing additional packages.

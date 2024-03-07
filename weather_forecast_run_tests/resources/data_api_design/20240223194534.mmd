@@ -1,0 +1,22 @@
+
+classDiagram
+    class App {
+        +StreamlitUI ui
+        +WeatherAPI weather_api
+        +main() void
+    }
+    class StreamlitUI {
+        +display_current_weather(data: dict)
+        +display_hourly_forecast(data: list)
+        +display_weekly_forecast(data: list)
+        +search_bar() str
+    }
+    class WeatherAPI {
+        +api_key str
+        +base_url str
+        +get_current_weather(location: str) dict
+        +get_hourly_forecast(location: str) list
+        +get_weekly_forecast(location: str) list
+    }
+    App --> StreamlitUI
+    App --> WeatherAPI
