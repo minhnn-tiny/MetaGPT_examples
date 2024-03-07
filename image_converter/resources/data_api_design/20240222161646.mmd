@@ -1,0 +1,17 @@
+
+classDiagram
+    class StreamlitApp {
+        +run() void
+    }
+    class ImageConverter {
+        +convert_image(input_image: Image) Image
+    }
+    class ImageUploader {
+        +upload_image() Image
+    }
+    class ImageDownloader {
+        +download_image(output_image: Image) void
+    }
+    StreamlitApp --> ImageConverter
+    StreamlitApp --> ImageUploader
+    StreamlitApp --> ImageDownloader

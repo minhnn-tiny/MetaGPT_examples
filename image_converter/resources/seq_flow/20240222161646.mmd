@@ -1,0 +1,12 @@
+
+sequenceDiagram
+    participant SA as StreamlitApp
+    participant IU as ImageUploader
+    participant IC as ImageConverter
+    participant ID as ImageDownloader
+    SA->>IU: upload_image()
+    IU-->>SA: return input_image
+    SA->>IC: convert_image(input_image)
+    IC-->>SA: return output_image
+    SA->>ID: download_image(output_image)
+    ID-->>SA: return
