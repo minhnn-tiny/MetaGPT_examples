@@ -1,0 +1,20 @@
+
+sequenceDiagram
+    participant M as Main
+    participant G as Game
+    participant B as Bird
+    participant P as Pipe
+    participant S as Score
+    participant SO as Sounds
+    M->>G: run()
+    loop Game Loop
+        G->>B: update()
+        G->>P: move()
+        P->>G: check_collision(B)
+        alt is Collision
+            G->>SO: play_sound('hit')
+            G->>G: restart()
+        else No Collision
+            G->>S: update()
+        end
+    end

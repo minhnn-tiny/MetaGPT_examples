@@ -1,0 +1,37 @@
+
+classDiagram
+    class Main {
+        +main() void
+    }
+    class Game {
+        -bird Bird
+        -pipes list
+        -score Score
+        +run() void
+        +restart() void
+    }
+    class Bird {
+        -velocity float
+        -position tuple
+        +flap() void
+        +update() void
+    }
+    class Pipe {
+        -position tuple
+        -gap_size int
+        +move() void
+        +check_collision(Bird) bool
+    }
+    class Score {
+        -current_score int
+        -highest_score int
+        +update() void
+        +reset() void
+    }
+    class Sounds {
+        +play_sound(sound_type) void
+    }
+    Game --> Bird
+    Game --> Pipe
+    Game --> Score
+    Game --> Sounds
