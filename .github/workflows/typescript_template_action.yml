@@ -1,0 +1,25 @@
+name: Test Typescript Action
+on:
+  issues:
+    types:
+      - opened
+      - labeled
+      - reopened
+      - reopened
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v4
+    
+      - name: Test Local Action
+        id: test-action
+        uses: minhnn-tiny/startup-typescript-action@v1 # Commit with the `v1` tag
+        with:
+          milliseconds: 1000
+      - name: Print Output
+        id: output
+        run: echo "${{ steps.test-action.outputs.time }}"
