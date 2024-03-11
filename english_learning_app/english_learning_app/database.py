@@ -5,8 +5,9 @@ from contextlib import contextmanager
 import os
 import logging
 
+DATABASE_PATH = './database'
 # Import configurations
-from config import DATABASE_PATH
+# from config import DATABASE_PATH
 
 # Ensure the directory for the SQLite database exists
 os.makedirs(os.path.dirname(DATABASE_PATH), exist_ok=True)
