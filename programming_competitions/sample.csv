@@ -1,1160 +1,1462 @@
 ,QCode,Title,link,level,statement,Author,Tester,Editorial,Tags,Date Added,Time Limit,Source Limit,Languages
-26,CIEL8STR,Ciel and New Menu,/problems/CIEL8STR,easy,"
-All submissions for this problem are available.
+17,SEQCOUNT,How many sequences,/problems/SEQCOUNT,hard,"
+All submissions for this problem are available. Read problems statements in Mandarin Chinese  and Russian.
+Consider the sequence of K natural numbers: a1, a2, ..., aK. Tooru thinks that this sequence is nice if and only if:
 
-Chef Ciel likes 8. Ciel's restaurant has many menus whose prices are multiples of 8.
-Now, Ciel has some digits written on a wooden board, and she'd like to cut the board to display prices in a new menu.
-In how many ways can Ciel choose consecutive digits from the board which denote integer multiples of 8?
+a1+a2+...+aK = N
+a1 < a2 < ... < aK
+ai+1 - ai <= D for every natural i, smaller than K
+a1 <= D
 
 
-In this problem, an integer must not have leading zeros.
-For example, 0, 8, 48, 1000 are integer multiples of 8, but 00, 5, 58, 01000 are not.
+You are given N, K and D. Please, count the number of nice sequences for her. This number can be huge, so we ask you to output it modulo 109+7.
 
 Input
-
-An input contains a string S, which denotes digits written on the wooden board.
-
+The first and only line of the input consists of the integers N, K and D, separated by a single space.
 Output
-
-Print the number of ways in which Ciel can choose consecutive digits which denote integer multiples of 8.
-
-Constraints
-
-1 ≤ |S| ≤ 1000000 (106), where |S| means the length of S.
-S doesn't contain non-digit charactors.
-
-Sample Input
-5858Sample Output
-2Output details
-
-Ciel can choose 5, 8, 5, 8, 58, 85, 58, 585, 858 and 5858.
-Here, only 8 and 8 are multiples of 8.
-
-",laycurse,Shangjingbo,http://discuss.codechef.com/problems/CIEL8STR,"['cook17', 'easy', 'laycurse']",            21-11-2011</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-74,CANDY,The Perfect Chocolate Candy,/problems/CANDY,medium,"
-All submissions for this problem are available.
-The chef is a fan of candies with chocolate and caramel, and has devoted much of his life
-to finding the perfect ratio of chocolate to caramel.
-He recently discovered the perfect ratio, but to his dismay,
-none of his favourite candy shoppes sell candies with exactly that ratio.
-So the chef crafted a plan to buy several candies, and melt them together into a larger candy
-so that the resulting candy will have the perfect ratio.
-How many candies will he have to buy?
-The chef may buy multiple candies of the same type.
-
+Output the number of nice sequences on the first line of the output modulo 109+7.
+Example
 Input:
-Input begins with an integer N,
-the number of different candies available at the various shoppes.
-N lines follow, each containing 2 integers Chocolatei and Carameli indicating the grams of chocolate and caramel,
-respectively, contained in the (i)th candy.
-Finally, there is a line containing 2 integers desiredChocolate and desiredCaramel, indicating the chef's desired ratio of
-chocolate to caramel.
+10 4 1
+
 Output:
-For each test case, output on a single line the minimum number of candies the chef will have to buy.
-If it is impossible to produce a candy with the desired ratio, output -1 instead.
-Example
-Input 1:
-3
-4 5
-2 4
-4 1
-1 1
- 
-Output 1:
-3
- 
-In this example, the chef purchases one of each candy and combines them to form a candy with 8 grams chocolate and 8 grams caramel.
-Input 2:
-3
-2 3
-4 6
-10 15
-5 8
- 
-Output 2:
--1
- 
-Constraints:
-1 ≤ N ≤ 15
-1 ≤ Chocolatei ≤ 500
-1 ≤ Carameli ≤ 500
-1 ≤ desiredChocolate ≤ 500
-1 ≤ desiredCaramel ≤ 500
-For all candies, Chocolatei/Carameli ≠ desiredChocolate/desiredCaramel
-No two candies will be identical.
-
-",pieguy,maksflow,http://discuss.codechef.com/problems/CANDY,"['cook03', 'pieguy', 'medium']",            25-09-2010</td>        <,            3 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYPY, PYTH, PYTH 3.4, RUBY, SCALA, SCM chicken, SCM guile, SCM qobi, ST, TEXT, WSPC</td>        <"
-117,ABCSTR,ABC-Strings,/problems/ABCSTR,medium,"
-All submissions for this problem are available. Read problems statements in Mandarin Chinese and Russian as well.
-
-Mike likes strings. He is also interested in algorithms. A few days ago he discovered for himself a very nice problem:
-
-
-You are given an AB-string S. You need to count the number of substrings of S, which have an equal number of 'A'-s and 'B'-s.
-
-
-Do you know how to solve it? Good. Mike will make the problem a little bit more difficult for you.
-
-
-You are given an ABC-string S. You need to count the number of substrings of S, which have an equal number of 'A'-s, 'B'-s and 'C'-s.
-
-
-A string is called AB-string if it doesn't contain any symbols except 'A' or 'B'. A string is called ABC-string if it doesn't contain any symbols except 'A', 'B' or 'C'.
-
+1
+Explanation
+The only suitable sequence is (1, 2, 3, 4).
+Scoring
+1 <= N, K, D <= 10 : 17 points.
+1 <= N, K, D <= 400 : 23 points. 1 <= N, K, D <= 2000 : 20 points.
+1 <= N, K, D <= 105 : 40 points. ",xcwgf666,Rubanenko‎,http://discuss.codechef.com/problems/SEQCOUNT,"['ltime10', 'dp', 'xcwgf666', 'easy-medium']",            7-03-2014</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+49,ASTRING,Akhil And Random String,/problems/ASTRING,easy,"
+All submissions for this problem are available. Read problems statements in Mandarin Chinese , Russian and Vietnamese as well.
+Akhil comes across a string S of length N. He started wondering about the smallest lexicographical subsequence of string S of length K.
+A subsequence of a string is formed by deleting some characters (possibly none) from it's original string.
+A string A is said to be lexicographically smaller than the string B of the same length if at the first position where A and B differ, A contains a letter which appears earlier in the dictionary than the corresponding letter in B.
 Input
-The first line of the input contains an ABC-string S.
-Output
-Your output should contain the only integer, denoting the number of substrings of S, which have an equal number of 'A'-s, 'B'-s and 'C'-s.
 
-The answer can go above a 32-bit integer. Please, use 64-bit integers for storing and processing data.
+The first line of the input contains an integer T denoting the number of test cases. The description of T test cases follows:
+First line of each test case will contain string S
+Second line of each test case will contain an integer K.
+
+Output
+
+For each test case, output a single line containing the lexicographically smallest subsequence of S of length K.
+
 Constraints
-1 ≤ |S| ≤  1 000 000; where |S| denotes the length of the given ABC-string.
+
+1 ≤ T ≤ 5
+1 ≤ K ≤ N
+S consists of lowercase English alphabet characters, i.e. from 'a' to 'z'.
+
+Subtasks
+Subtask #1 (10 points) : 1 ≤ |S| ≤ 100
+Subtask #2 (20 points) : 1 ≤ |S| ≤ 103
+Subtask #3 (70 points) : 1 ≤ |S| ≤ 105
 Example
 Input:
-ABACABA
+2
+abdc
+3
+bacb
+2
+
+Output:
+abc
+ab
+Explanation
+Example case 1. ""abc"" is the smallest lexicographical subsequence out of [""abd"", ""bdc"", ""abc"", ""adc""].
+Example case 2. ""ab"" is the smallest lexicographical subsequence of length 2. ",amitpandeykgp,prateekg603,http://discuss.codechef.com/problems/ASTRING,"['amitpandeykgp', 'ltime36', 'implementation']",            24-05-2016</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYPY, PYTH, PYTH 3.4, RUBY, SCALA, SCM chicken, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+135,COOKOFF2,The Grand Cook Off,/problems/COOKOFF2,medium,"
+All submissions for this problem are available.
+Chef is planning a grand cooking tournament for aspiring chefs in the region.
+The competition progresses with a number of one-on-one elimination rounds until only one chef remains.
+For each round, two chefs are chosen at random for a cook-off.
+The loser of the cook-off is elimited, while the winner moves on.
+Additionally, each chef begins with a positive number of prize tokens
+(some chefs begin with more than others, based on their performance in a qualification round).
+The winner of each cook-off receives all of the loser's prize tokens, and the loser is
+awarded a prize based on the number of prize tokens he/she had accrued.
+The final cook-off always receives the most publicity.
+Your task it to compute the expected difference between the number of prize tokens of the final two
+competitors before the final cook-off.
+You will be given the number of tokens each chef begins with.
+Input
+Input begins with an integer T, the number of test cases (at most 50).
+Each test case consists of a single line, beginning with an integer C,
+the number of chefs in the competition, followed by C positive integers each describing the number
+of prize tokens a chef begins with.
+The total number of prize tokens among all chefs will be between 1 and 100, inclusive.
+Output
+For each test case, output the expected difference in prize tokens, rounded to 6 places
+after the decimal point.
+Sample Input
+3
+3 1 1 1
+3 1 1 2
+4 10 10 10 30
+Sample Output
+1.000000
+1.333333
+26.666667
+ ",pieguy,friggstad,http://discuss.codechef.com/problems/COOKOFF2,"['medium', 'pieguy', 'cook09']",            7-04-2011</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+136,BLOCKING,Block Game,/problems/BLOCKING,medium,"
+All submissions for this problem are available.
+In the magic land, there is a smart but naughty boy Crane.
+Crane has n houses, and n friends (both numbered from 1 to n).
+Crane's mother has scheduled a plan for all his friends
+such that each friend visits each house of Crane exactly once
+at a different time, i.e.,
+there is at most one friend in any house at any time.
+But like Crane all his friends are also naughty.
+Therefore his mother wants to lock away each of his friends in distinct houses.
+What she'll do is to choose a distinct house for each friend. As that friend visits
+that house, he'll be locked in that house.  That is, Crane's mother wants to find a
+sequence block such that
+the i-th friend will be locked in block[i]-th house
+once he visits that house. As she wants to ensure that there is at maximum one
+person in each house, she must choose the sequence block such
+that if friend A visits house H at time T, and he is locked away in the house, then no other friends visit house H
+after time T. 
+Help Crane's mother to find such a sequence block. 
+Input
+First line contains a single integer n (1 ≤ n
+≤ 100), indicating the number of friends and houses.
+Then n lines follow, with each line containing n positive integers.
+The j-th integer in i-th line indicates the time when the i-th friend will visit the j-th house. All times will fit in signed 32-bit integer.
+Output
+If there exists a sequence block that satisfies the constraints, then output block[1] block[2] ... block[n] in one line, separated by a single space.
+Otherwise if there is no such sequence, output -1 in one line.
+If there are multiple answers, then anyone will do.
+Example
+
+Input:
+3
+1 2 3
+4 5 6
+7 8 9
+
+Output:
+3 2 1
+ ",shangjingbo,laycurse,http://discuss.codechef.com/problems/BLOCKING,"['shangjingbo', 'matching', 'aug12', 'graph']",            26-06-2012</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+166,TEAMSEL,Team Selection,/problems/TEAMSEL,hard,"
+All submissions for this problem are available.
+One of the cherished customs of my childhood was choosing up sides for a cricket game. We did it this way: The two bullies of our gully would appoint themselves captains of the opposing teams, and then they would take turns picking other players. On each round, a captain would choose the most capable (or, towards the end, the least inept) player from the pool of remaining candidates, until everyone present had been assigned to one side or the other. The aim of this ritual was to produce two evenly matched teams and, along the way, to remind each of us of our precise ranking in the neighbourhood pecking order.
+We all believed this was the fairest process, but does it ensure the fairest selection of players with evenly matched teams? We believed so, but then there were times when, as the game progressed we realized that the other team was stronger than ours and may be an exchange of a couple of players between the teams would have made them balanced. That scope of improvement seemed to be there...
+Here, we need to find a way to create two evenly balanced teams for any game(or as evenly balanced as possible considering the strength of each player). A set of players must be divided into two teams. Each player must be on one team or the other; the number of player on the two teams must not differ by more than 1; each player will have a skill-point associated with him. The total skill-points of the players on each team should be as nearly equal as possible.(The absolute difference of the sum of skill-points of players in each team should be the least).
+Input
+The first line of input will contain the number of test cases 'T'(1<=T<=100). This is followed by 'T' test cases. Each test case starts with a blank line, followed by N, the total number of players. N lines will follow with the first line giving the skill-point of person 1; the second line, the skill-point of person 2; and so on. Each skill-point shall be an integer between 1 and 450. There shall be at most 100 players in all(1<=N<=100).
+Output
+Your output should be exactly '2T-1' lines. The output for each test case should be followed by a blank line, except the output for the last test case. Each odd numbered line should contain 2 numbers: the total skill-points of the players on one team, and the total skill-points of the players on the other team. Print the smaller sum first.
+Example
+
+Input:
+4
+
+3
+90
+200
+100
+
+10
+2
+3
+10
+5
+8
+9
+7
+3
+5
+2
+
+10
+1
+1
+1
+1
+1
+1
+1
+1
+1
+9
+
+8
+87
+100
+28
+67
+68
+41
+67
+1
+
+Output:
+190 200
+
+27 27
+
+5 13
+
+229 230
+
+Note: First paragraph is inspired by Brian Hayes's 2002 American Scientist article 'The Easiest Hard Problem' 
+",admin,,,['admin'],            20-05-2009</td>        <,            3 - 5 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TEXT, WSPC</td>        <"
+358,M5,Overlapping discs,/problems/M5,hard,"
+All submissions for this problem are available.
+You are given n discs on plane, of the same radius (r=1). Output the area of the part of the plane which is covered by each disc.
+Input
+First, 1<=t<=10, the number of tests. Each testcase is of the following form: 1<=n<=100000, then n pairs of floating point coordinates follow: -1000<=xi,yi<=1000, representing the location of the i-th disc.
+Output
+For each testcase, output the total area covered by the intersection of all discs. Round the answer to 6 decimal digits after the point.
+Example
+Input:
+1
+2
+0 0
+0 1
+
+Output:
+1.228370
+ ",admin,,,['admin'],            29-01-2010</td>        <,            2 - 5 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYPY, PYTH, PYTH 3.4, RUBY, SCALA, SCM chicken, SCM guile, SCM qobi, ST, TEXT, WSPC</td>        <"
+368,SHAIKHGN,Funny gnomes,/problems/SHAIKHGN,medium,"
+All submissions for this problem are available. Read problems statements in Mandarin Chinese, Russian and Vietnamese as well.
+Kekocity's population consist of N gnomes numbered with unique ids from 1 to N. As they are very joyful gnomes, they usually send jokes to their friends right after they get any (even if they knew it before) via their social network named as Mybeard. Mybeard became popular in the city because of message auto-deletion. It takes exactly one minute to read and resend joke to mates.
+
+Mayor of Kekocity, Mr. Shaikhinidin, is interested in understanding how the jokes are spread. He gives you database of Mybeard social network, and wants you to answer some queries on it.
+
+You will be given a list of friends for every gnome and M queries of the following type: Who will receive a message with joke after exactly K minutes, if the creator of joke was gnome with id x?
+Input
+The first line contains a single integer N denoting the number of gnomes.
+The next N lines contain the the matrix g[N][N]. Each of the i-th line, will contain N space separated integers - j-th of those will denote g[i][j]. If gnome j is friend of gnome i, then g[i][j] is 1. Otherwise it will be zero. Plese note that the friendship relationship is not bidirectional, i.e. it might happen that g[i][j] may not be equal to g[j][i]. Also one can be friend of itself also, i.e. g[i][i] may be equal to 1.
+The next line contains a single integer M denoting the number of queries. The next M lines contain two integers k and x described above.
+Output
+For each query, output two lines.
+In the first line, output how many gnomes will know the joke after k minutes.
+In the second line, print these ids (numbering) of these gnomes in increasing order. If no one will know the joke after K minutes, then print -1 in this line.
+Constraints
+
+1 ≤ N ≤ 500
+1 ≤ M ≤ 500
+0 ≤ k ≤ 109
+1 ≤ x ≤ N
+0 ≤ g[i][j] ≤ 1
+
+ Subtasks 
+ Subtask #1 : (10 points) 
+
+1 ≤ N ≤ 50
+1 ≤ M ≤ 50
+0 ≤ k ≤ 50
+
+ Subtask #2 : (15 points) 
+
+Original constraints
+Every gnome has exactly one friend (for every i there is exactly one j such that g[i][j] = 1. Note that j can be equal to i) 
+
+ Subtask #3 : (30 points) 
+
+1 ≤ N ≤ 75
+1 ≤ M ≤ 75
+0 ≤ k ≤ 109
+
+ Subtask #4 : (45 points) 
+
+Original constraints
+
+Example
+Input:
+5
+0 1 0 0 0
+0 0 1 1 0
+1 0 0 0 0
+0 0 0 1 0
+0 0 0 0 0
+4
+3 1
+10000 1
+0 5
+1 5
 
 Output:
 2
-
-Explanation
-
-In the example you should count S[2..4] = ""BAC"" and S[4..6] = ""CAB"".
- ",kostya_by,gerald,http://discuss.codechef.com/problems/ABCSTR,"['kostya_by', 'ad-hoc', 'map', 'simple', 'cook44']",            8-02-2014</td>        <,            2 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-172,DIVISORS,Something About Divisors,/problems/DIVISORS,hard,"
+1 4
+2
+2 4
+1
+5
+0
+-1
+ ",na2a,xcwgf666,http://discuss.codechef.com/problems/SHAIKHGN,"['aug16', 'medium', 'bitset', 'na2a']",            23-05-2016</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYPY, PYTH, PYTH 3.4, RUBY, SCALA, SCM chicken, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+384,TEAMSIZE,Team Formation,/problems/TEAMSIZE,medium,"
 All submissions for this problem are available.
 
-For a given positive integers B and X find the number of positive integers N such that number N*X has at least one divisor D such that N < D <= B.
+Battle of the Chefs is coming up! It's a contest where different teams of different Chefs compete against each other. Our Chef wants to send one of the best teams from his entire staff. Selecting a good team is not about having the best people, but it is about having members who can cooperate and work well with each other. Chef is very aware of this fact. So he chooses the following strategy to decide a team. He lines up all his N cooks in a line. Each of these cooks has a skill level associated with him. Denote the level of the i-th cook as skill[i] for 1 ≤ i ≤ N. Let us make a few points on a team formation.
+
+
+A team can have any number of cooks.
+Each team should consist of consecutive cooks. So, for example, cooks with positions 3, 4, 5 can form a team, but cooks with positions 4, 5, 7, 8 can not.
+A team is a candidate team if the difference between the maximum skill and the minimum skill of the cooks in the team does not exceed the threshold C.
+A cook can be in 0 or more candidate teams. Which means that candidate teams can intersect.
+Two candidate teams are considered to be different if there exists at least one cook who is in one team but not in the other.
+
+
+
+Chef has not yet decided the team of what size he is going to send to the battle. To be precise we note, that the team size is the total number of cooks in it. For the given team size Chef wants to consider all candidate teams of this size according to the rules described above, evaluate them for himself and choose the best one. Denote the total number of candidate teams for the given size K as cand[K]. To increase the chances of choosing better team he wants the number of candidate teams to be as large as possible. But Chef is a human and can't evaluate too many teams. The maximal number of teams he can evaluate depends on many factors such as his mood or fatigue. We call it the Chef's limit. Denote the current Chef's limit as M. Since Chef still wants the total number of candidate teams to be as large as possible you need to find the team size K such that cand[K] ≤ M, among all such K find the value for which cand[K] is maximal and if such K is not unique find the minimal K among them. Since Chef's limit always changes according to his mood or fatigue you should find the required team size for several values of M. Chef also wants to know the total number of candidate teams for the size you will find. There will be Q values of M in all.
+
+
+In order to keep the input small the skills of the cooks will be given in the following way.
+
+Skills of the first X cooks are given in the input, where X = min(10000, N).
+If N > 10000 skills of the remaining cooks for 10000 < i ≤ N are calculated as
+skill[i] = (A * skill[i-1] + B * skill[i-2] + D) mod 230,
+where A, B and D are given in the input. Here mod denotes the modulo operation, that is, Y mod Z is the remainder of division of Y by Z.
+
 Input
- The first line contains a single positive integer T <= 40, the number of test cases. T test cases follow. The only line of each test case contains two positive integers B <= 1012 and X <= 60.
+
+The first line of the input contains a single integer T, the number of test cases to follow.
+Each test case consists of 3 lines.
+The first line contains 6 space-separated integers N, C, Q, A, B and D.
+The second line contains X = min(N, 10000) space-separated integers, i-th integer among them represents the skill of the i-th cook, that is, the number skill[i].
+The third line contains Q space-separated integers, the values of M for which you need to find the optimal team size and the number of candidate teams of this size.
+
 Output
- For each test case, output a single line containing the answer for the corresponding test case.
+
+For each test case, output Q lines containing the optimal team size for the corresponding value of M and the number of candidate teams corresponding to this team size separated by a space.
+
+Constraints
+
+1 ≤ T ≤ 5
+1 ≤ N ≤ 500000
+0 ≤ C < 230
+1 ≤ Q ≤ 1000
+0 ≤ A, B, D < 230
+0 ≤ skill[i] < 230 for 1 ≤ i ≤ X
+1 ≤ M ≤ N
+
 Example
 
 Input:
-3
-5 1
-10 3
-100 6
+2
+6 3 3 1 1 1
+6 2 4 5 6 3
+4 3 6
+6 10 1 2 2 2
+1 1000 1 1000 1 1000
+4
 
 Output:
-0
-5
-63
-
+2 4
+3 3
+1 6
+2 0
 Explanation
-In the second test case required numbers are 1, 2, 3, 4, 6.
-",anton_lunyov,gamabunta,http://discuss.codechef.com/problems/DIVISORS,"['anton_lunyov', 'hard', 'aug11']",            7-07-2011</td>        <,            7 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-174,ALICE,Alice,/problems/ALICE,hard,"
+
+Case 1.
+With team size 2, we have 4 candidate teams: {2, 4}, {4, 5}, {5, 6}, and {6, 3}. Here numbers denote the cooks' skills. With any other team size, the number of candidate teams is either less than 4 or greater than 4.
+Similarly, with team size 3, we have 3 candidate teams, which are {2, 4, 5}, {4, 5, 6} and {5, 6, 3}.
+With team size 1, we have 6 candidate teams with one member in each team.
+
+
+Case 2.
+With team size 1, we have 6 possible candidate teams. But 6 > 4. For all other team sizes, the total number of candidate teams is 0. Thus, the answer is the smallest size among them, i.e., 2.
+
+",vamsi_kavala,,,"['oct12', 'medium', 'deque', 'vamsi_kavala']",            6-10-2011</td>        <,            3 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+448,KFORK,Knight Fork,/problems/KFORK,medium,"
+All submissions for this problem are available. Read problems statements in Mandarin Chinese  and Russian.
+Forking is an important tactics in the game of chess. A piece is said to perform a fork if 
+1) It is on a safe square, i.e., the next move by the opponent does not kill the piece
+2) It targets atleast 2 of the opponents pieces in its next move. So even if the opponent moves one of his pieces to safety, one of his remaining pieces can be killed.
+
+You are given an NxN board, containing M White Queens. Remember, a Queen can move vertically, horizontally and diagonally; and kills any opponents piece directly in these directions. A Knight has 8 possible moves from position (i,j), viz (i+1,j+2), (i+1,j-2), (i-1,j+2), (i-1,j-2), (i+2,j+1), (i+2,j-1), (i-2,j+1), (i-2,j-1) (while remaining inside the NxN board). You have to find out the number of unoccupied positions on the NxN board, where a Black Knight can be placed such that it forks atleast 2 Queens.
+
+INPUT:
+First line contains T, number of testcases
+Each testcase starts with a line containing two integers N and M
+Then M lines follow, ith line containing two space separated integers X[i] and Y[i], the coordinates of the ith Queen
+
+OUTPUT:
+For each testcase, output a single line containing the answer to the question
+
+CONSTRAINTS:
+1<=T<=10
+1<=X[i],Y[i]<=N 
+0<=M<=N*N 
+40 points : 1<=N<=8
+60 points : 1<=N<=1000
+No two queens can be in the same square.
+
+SAMPLE INPUT:
+1
+5 2
+1 1
+3 1
+
+SAMPLE OUTPUT:
+1
+
+EXPLANATION:
+Only forking position is (2,3) ",piyushkumar,,http://discuss.codechef.com/problems/KFORK,"['simple', 'piyushkumar', 'ltime11', 'brute-force']",            20-04-2014</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+514,NI02,KGP Summers,/problems/NI02,easy,"
+All submissions for this problem are available.
+Summers in Kharagpur are Hot. And Humid! It’s pretty rough for students who are new to KGP and are not used to the sweating it can cause.
+The students want to minimize the amount of sweat while walking from their hostels to class. When they enter the sunshine, they begin sweating. The longer they stay in the sun, the more they sweat.
+Precisely, if the Euclidean distance between points A and B is d, then a student sweats d2 units when going from A to B without stopping anywhere on the way. But if they stop at a shady spot on the way (like a tree), their continuous sun exposure is broken, and they stop sweating immediately! So they can sit in the shade of the tree and cool off before resuming their journey. Once they leave the shade, they start sweating again.
+For example, if a student goes from his room A0 to class An+1 while stopping at n trees in between for shade, the total sweat produced is
+d(A0,A1)2 + d(A1,A2)2 + …… + d(An,An+1)2
+Your task is to help the students find a path from their rooms to class in such a way that they sweat the minimum.
+Input
+The first line of input contains a single integer T (1 ≤ T ≤ 10), the number of test cases. Then follow the descriptions of the test cases one by one.
+For each test case, the first line contains a single integer N (0 ≤ N ≤ 2500) indicating the number of trees on campus. The next N lines each contain a pair of integers denoting the 2D co-ordinates of each tree. The absolute value of each coordinate is less than or equal to 1000. No two trees have the same location. Then there are 2 additional lines – the co-ordinates of the student’s room and the classroom respectively.
+Output
+Print a single integer for each test case on a line by itself, the minimum amount of sweat that should be expended when a student goes from his room to class.
+Example
+
+Input:
+2
+6
+8 2
+4 0
+8 0
+4 -1
+7 -1
+6 -2
+2 1
+9 2
+1
+0 0
+-1 1
+1 -1
+
+Output:
+20
+4
+
+ ",iitgfaculties,,,['iitgfaculties'],            2-11-2012</td>        <,            3 sec</td>        <,            50000 Bytes</td>        <,"            <td>C, CPP 4.3.2, CPP14, GO, JAVA</td>        <"
+562,RECTLOVE,Rectangles of Love,/problems/RECTLOVE,easy,"
 All submissions for this problem are available. Read problems statements in Mandarin Chinese, Russian and Vietnamese as well.
-
-As a cryptologist, after working on numerous cryptographic protocols, Alice is now retired and living happily in Wonderland. However Alice is still obsessed with security, she even invented a new way to set passwords. Given a board of n rows and n columns with unitary size cells, Alice creates a password by drawing exactly n+1 lines with vertices of the integer points on the perimeter of the board. 
-
+Today is the planned day tor Thik and Ayvak's wedding. Kark is infatuated with Ayvak. He offers to play a game with Thik. Whosoever wins, will get to marry Ayvak. Ayvak, who values games of chance over all the other things in life, agrees to this.
 
 
-One day Alice forgot her CodeChef password! She knew that she had set her password in the secure way. She remembers that no two lines were parallel, and that every cell of the board was cut by at least one of the lines. A cell is cut by a line when there exists a point strictly inside of the cell that belongs to the line.
+Kark sets up an N by M grid (N rows, M columns), labelled from left to right and top to bottom consecutively with numbers from 1 to M*N, with 1 at the top left corner and M*N at the bottom right corner. For example, a labelled 3 by 6 grid looks as follows:
 
 
-Please help Alice finding one password satisfying the information that she remembered.
+
+Kark has already painted K unit squares of the grid with a heart each. Next, Thik randomly picks a rectangle with sides on the grid lines, and having a positive area, with each valid rectangle having an equal probability of being chosen. Three distinct possibilities for Thik's rectangle in the 3 by 6 grid are shown below: 
+
+
+
+
+The nine different rectangles in a 2 by 2 grid are shown below:
+
+
+
+
+
+If Thik's rectangle contains at least half of the hearts, Thik gets to marry Ayvak. Otherwise, Kark will marry Ayvak. Kark wants to know whether or not he has an advantage here, so he wants to know the expected value of the number of hearts a randomly chosen rectangle will cover. I'm sure that you have a good heart, so please, cover this job for him. 
 
 Input
-The first line of the input contains one integer T the number of test cases.
-Each test case is described by a line containing an integer  n representing the size of the board.
+The first line of input contains one integer T, the number of test cases.
+For each test case, the first line contains 3 space-separated integers N, M, K, as described in the problem statement. The next line contains K space-separated integers, each a single number from 1 to M*N, representing a square that is painted with a heart. It is guaranteed that all K integers are distinct.
 Output
-For each test case print n + 1 lines each of them containing four integers x1 y1 x2 y2 with x1 ≠ x2 and y1 ≠ y2, representing a line that goes from (x1,y1) to (x2,y2). 
-If there are multiple passwords that satisfies the information, print any of them.
-Constraints
+Output T lines, each containing a single real number, containing the expected number of hearts that a randomly chosen rectangle will contain. The answer will be considered correct if its relative or absolute error does not exceed 10-6.
 
-1 ≤ T ≤ 10 
-1 ≤ n ≤ 103 
+Constraints
+1 ≤ T ≤ 5  
+1 ≤ N, M ≤ 107  
+1 ≤ K ≤ 105 
+Each of the K integers representing a heart are between 1 and N*M, inclusive. All K integers are distinct. 
+Subtasks
+Subtask 1 (15 points) : 
+
+1 ≤ N, M ≤ 10
+1 ≤ K ≤ N * M 
+
+Subtask 2 (85 points) : no additional constraints 
+
 
 Example
 Input:
 1
-3
+2 2 2
+1 2
 
 Output:
-0 0 3 2
-3 0 0 2
-0 1 2 3
-0 3 3 2
+0.8888888888888888
 
 Explanation
-One of the possible passwords is depicted in the above figure.
-Every cell is cut by at least one line, for example the green cell is cut by the blue and purple lines, but not by the yellow one. The integer points on the perimeter of the board are drawn as small black circles. ",alei,kingofnumbers,http://discuss.codechef.com/problems/ALICE,"['cook73', 'constructive', 'easy-medium', 'alei', 'gcd']",            20-07-2016</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYPY, PYTH, PYTH 3.4, RUBY, SCALA, SCM chicken, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-205,BINTREE,Shortest Path in Binary Trees,/problems/BINTREE,easy,"
-All submissions for this problem are available. Read problems statements in Mandarin Chinese  and Russian.
-Consider an infinite full binary tree (each node has two children except the leaf nodes) defined as follows. For a node labelled v its left child will be labelled 2*v and its right child will be labelled 2*v+1. The root is labelled as 1.
-You are given N queries of the form i j. For each query, you have to print the length of the shortest path between node labelled i and  node labelled j.
+There are a total of 9 possible rectangles Thik could draw, shown in the figure above, and grid squares 1 and 2 are painted with a heart. The top row of possible selections (shown in the figure) contain 1, 0, 1, 2, and 2 hearts (from left to right), and the bottom row of possible selections (in the figure) contain 1, 0, 1, and 0 hearts. Therefore, 3/9 of the time 0 hearts are contained in the rectangle, 4/9 of the times 1 heart is contained in the rectangle, and 2/9 of the time 2 hearts are contained in the rectangle. The expected value is then 0 * 3/9 + 1 * 4/9 + 2 * 2/9 = 8/9. ",minimario,,http://discuss.codechef.com/problems/RECTLOVE,"['feb16', 'expectation', 'minimario']",            30-08-2015</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYPY, PYTH, PYTH 3.4, RUBY, SCALA, SCM chicken, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+587,CHITHH,Chef and Science,/problems/CHITHH,medium,"
+All submissions for this problem are available. 
+Chef studied science at school. But now he was tired of it. He likes to solve problems on Codechef. Here and now, he decided to go to his favourite site and solve several interesting problems. But as it turned out Chef is not yet ready to solve the harder problems. So you have to help him.
 
+If you take away all the foreword, then the task set is this: you have N non-negative numbers A1, A2 ... AN and M requests. Each request consists of three numbers (l, v, k). MagicInteger(l,v) is equal to concatenation of the numbers Ai, such that (i = l + v * q & 1 <= i <= n & q >= 0). For each such request you have to write the k-th digit of MagicInteger(l,v).
+
+
+Concatanation example:
+If you have 2 numbers 11, 22 - after concatenation you will have 1122.
+If you have 3 number 13, 44, 12 - after concatenation you will have 134412.
+One more example: 0, 3, 11, 0 - after concatenation you will have 03110. First digit of this string is 0, not 3.
+
+ 
 Input
-First line contains N, the number of queries. Each query consists of two space separated integers i and j in one line.
+The first line contains an integer N denoting the number of integers in the given array. The second line contains N space-separated integers A1, A2, ..., AN denoting the given array. The third line has a single integer M denoting the number of requests. The next M lines contains three space separated numbers in each line (l, v, k) denoting each request. 
 Output
-For each query, print the required answer in one line.
+For each request output a single line containing k-th digit of MagicInteger(l, v). If the length of MagicInteger(l,v) is smaller than k, you need to output ""So sad"" without quotes.
 Constraints
 
 1 ≤ N ≤ 105
-1 ≤ i,j ≤ 109
+1 ≤ M ≤ 105
+0 ≤ Ai ≤ 109
+1 ≤ l, v ≤ 105
+1 ≤ k ≤ 106
 
+ 
 Example
 Input:
-3
-1 2
-2 3
-4 3
+4
+0 1 2 3
+5
+1 1 2
+1 2 2
+1 2 1
+2 2 3
+4 100000 1
 
 Output:
 1
 2
-3
-Explanation
-For first query, 1 is directly connected to 2 by an edge. Hence distance 1. ",darkshadows,shiplu,http://discuss.codechef.com/problems/BINTREE,"['darkshadows', 'easy', 'tree', 'april14']",            21-03-2014</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-214,WALK,Walk,/problems/WALK,easy,"
-All submissions for this problem are available. Read problems statements in Mandarin Chinese  and Russian.
-Chef and his girlfriend are going to have a promenade. They are walking along the straight road which consists of segments placed one by one. Before walking Chef and his girlfriend stay at the beginning of the first segment, they want to achieve the end of the last segment. 
-There are few problems: 
-
- At the beginning Chef should choose constant integer - the velocity of mooving. It can't be changed inside one segment. 
- The velocity should be decreased by at least 1 after achieving the end of some segment. 
- There is exactly one shop on each segment. Each shop has an attractiveness. If it's attractiveness is W and Chef and his girlfriend move with velocity V then if V < W girlfriend will run away into the shop and the promenade will become ruined. 
-
- Chef doesn't want to lose her girl in such a way, but he is an old one, so you should find the minimal possible velocity at the first segment to satisfy all conditions.
- 
-
-Input
-
-The first line of the input contains an integer T denoting the number of test cases. The description of T test cases follows.
-The first line of each test case contains a single integer N denoting the number of segments. The second line contains N space-separated integers W1, W2, ..., WN denoting the attractiveness of shops. 
-
- 
-Output
-
-For each test case, output a single line containing the minimal possible velocity at the beginning.
-
- 
-Constraints
-
-1 ≤ T ≤ 10
-1 ≤ N ≤ 10^5
-1 ≤ Wi ≤ 10^6
-
- 
-Example
-Input:
-
-2
-5
-6 5 4 3 2
-5
-3 4 3 1 1
-
-Output:
-
-6
-5
- 
-Explanation
-Example case 1. 
- If we choose velocity 6, on the first step we have 6 >= 6 everything is OK, then we should decrease the velocity to 5 and on the 2nd segment we'll receive 5 >= 5, again OK, and so on. 
-Example case 2. 
- If we choose velocity 4, the promanade will be ruined on the 2nd step (we sould decrease our velocity, so the maximal possible will be 3 which is less than 4).  ",berezin,whiteking,http://discuss.codechef.com/problems/WALK,"['programming', 'march14', 'berezin', 'cakewalk']",            21-01-2014</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-234,APPROX,Approximately,/problems/APPROX,easy,"
-All submissions for this problem are available.
-Chef has recently learnt some new facts about the famous number π. For example, he was surprised that ordinary fractions are sometimes used to represent this number approximately. For example, 22/7, 355/113 or even 103993/33102.
-Soon, by calculating the value of 22/7 and 355/113 on paper Chef became quite disappointed because these values are not precise enough. For example, 22/7 differs in the third digit after the decimal point. So, these values are definitely should not be used for serious calculations.
-However, Chef doesn't know anything about 103993/33102. This fraction is quite inconvenient to calculate on paper. Chef is curious how precise this value is. So he asks you to help him and to calculate the first K digits after the decimal point of such an approximation of π. He consider this ordinary fraction as infinite decimal fraction so formally he asks you to calculate this approximation truncated to the first K digits after the decimal point.
-Input
-The first line of the input contains an integer T, denoting the number of test cases. The description of T test cases follows. The only line of each test case contains a single integer K.
-Output
-For each test case output a single line containing the value of 103993/33102 truncated to the first K digits after the decimal point. Note that for K = 0 you should output just ""3"" without decimal point (quotes are for clarity).
-Constraints
-
-0 ≤ K ≤ 106
-1 ≤ T ≤ 2000
-The sum of K over the input does not exceed 106
-
-Example
-
-Input:
-3
 0
-6
-20
-
-Output:
+So sad
 3
-3.141592
-3.14159265301190260407
-Explanation
-Example case 1. Here K = 0 so we don't need to output any digits after the decimal point. The decimal point itself also should not be output.
-Example case 2. Note that here we truncate (not round) the actual value of 103993/33102 to 6 digits after the decimal point. As you see from example case 3 rounded value here differs from truncated one.
-Example case 3. This example is only to show that this approximation of π is also far from perfect :)
-",xcwgf666,anton_lunyov,http://discuss.codechef.com/problems/APPROX,"['simple', 'march13', 'simple-math', 'xcwgf666']",            26-12-2012</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-236,ARITHPR,Longest Arithmetic Progressions,/problems/ARITHPR,medium,"
-All submissions for this problem are available.
-
-You are given positive integers L, R, k such that k <= R - L. Consider all strictly increasing arithmetic progressions with difference not less than k composed of numbers from the set {L, L+1, ..., R}. At first you need to find the length of the longest such progression. Easy as pie, right? Now consider all such longest progressions and write them down in lexicographical order. You need to find first two terms of the nth such progression. (Note that because of the condition k <= R - L the length of the longest progression is at least two.)
-
-
-Remark. We say that sequence a = (a[0], a[1], ..., a[n]) is lexicographically smaller than b = (b[0], b[1], ..., b[n]) if there exists some i such that 0 <= i <= n, a[j] = b[j] for 0 <= j < i and a[i] < b[i].
+ 
+Scoring
+Subtask 1 (30 points): N ≤ 1000
+Subtask 2 (25 points): V ≤ 100
+Subtask 3 (45 points):  Look at constraints  ",furko,,http://discuss.codechef.com/problems/CHITHH,"['binary-search', 'furko', 'medium', 'preprocessing', 'ltime04']",            15-09-2013</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+658,HELLO,Hello Hello,/problems/HELLO,easy,"
+All submissions for this problem are available.Chef talks a lot on his mobile phone. As a result he exhausts his talk-value (in Rokdas) very quickly. One day at a mobile recharge shop, he noticed that his service provider gives add-on plans which can lower his calling rates (Rokdas/minute). One of the plans said ""Recharge for 28 Rokdas and enjoy call rates of 0.50 Rokdas/min for one month"". Chef was very pleased. His normal calling rate is 1 Rokda/min. And he talked for 200 minutes in last month, which costed him 200 Rokdas. If he had this plan activated, it would have costed him: 28 + 0.5*200 = 128 Rokdas only! Chef could have saved 72 Rokdas. But if he pays for this add-on and talks for very little in the coming month, he may end up saving nothing or even wasting money. Now, Chef is a simple guy and he doesn't worry much about future. He decides to choose the plan based upon his last month’s usage.
+There are numerous plans. Some for 1 month, some for 15 months. Some reduce call rate to 0.75 Rokdas/min, some reduce it to 0.60 Rokdas/min. And of course each of them differ in their activation costs. Note - If a plan is valid for M months, then we must pay for (re)activation after every M months (once in M months). Naturally, Chef is confused, and you (as always) are given the task to help him choose the best plan.
 Input
- The first line contains a single integer T <= 10000, the number of test cases. T test cases follow. The only line of each test case contains four positive integers L, R, k and n where R <= 109, k <= R - L and  n <= 1018.
+First line contains T- the number of test cases. In each test case, first line contains D- the default rate (Rokdas/minute, real number), U- the number of minutes Chef talked in last month and N- the number of add-on plans available. Then N lines follow, each containing M- the number of months the plan is valid for, R- the calling rate for the plan (Rokdas/minute, real number) and C- the cost of the plan.
 Output
- For each test case, output a single line containing the length of the longest strictly increasing arithmetic progressions with difference not less than k composed of numbers from the set {L, L+1, ..., R} followed by the first two terms of the nth such progression in lexicographical order. If the total number of such progressions is less than n then simply output two zeros instead of the first two terms of the progression.
+For each test case, output one integer- the number of the best plan (from 1 to N). Output '0' if no plan is advantageous for Chef. No two plans are equally advantageous.
+Constraints
+1 ≤ T ≤ 1000.5 ≤ D ≤ 10.0 (exactly 2 digits after the decimal point)1 ≤ U ≤ 100001 ≤ N ≤ 1001 ≤ M ≤ 360.05 ≤ R < D (exactly 2 digits after the decimal point)1 ≤ C ≤ 1000
 Example
 
 Input:
-3
-2 6 2 1
-2 6 2 2
-1 32 8 12
+4
+1.00 200 1
+1 0.50 28
+1.00 200 2
+1 0.75 40
+3 0.60 100
+1.00 50 2
+1 0.75 40
+3 0.60 100
+1.00 100 2
+3 0.50 10
+2 0.10 20
 
 Output:
-3 2 4
-3 0 0
-4 5 14
+1
+2
+0
+2
+Explanation
+Test Case 1: This test case is same as the example in the problem statement.Test Case 2: This is for you to work out!Test Case 3: Chef's monthly usage is only 50 Rokdas and none of the 2 plans are advantageous, hence the answer is zero '0'.Test Case 4: Again solve it yourself, but NOTE - if Chef had chosen plan 1, he would have to pay 10 Rokdas (Activation cost), after every 3 months and NOT every month. Similarly had he chosen plan 2, he would have to pay 20 Rokdas (Activation cost), after every 2 months. ",vinayak garg,,http://discuss.codechef.com/problems/HELLO,"['simple-math', 'garg', 'aug13', 'simple', 'vinayak']",            29-01-2013</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+690,GERALD3,Chef and Substrings,/problems/GERALD3,medium,"
+All submissions for this problem are available. Read problems statements in Mandarin Chinese here
+ Read problems statements in Russian here
+Problem Statement
+Chef has a string S = S1S2 ... SN, consisting of N lowercase Latin letters. Also he has M pairs of integers Li, Ri (1 ≤ Li ≤ Ri ≤ N).For each pair Li, Ri, Chef writes out all distinct substrings of string S, which are started from positions Li, Li + 1, ..., Ri.Your task is to help Chef. That is, for each pair, find out how many substrings that he needs to write.
+Input
+The first line of the input contains an integer T denoting the number of test cases. The description of T test cases follows.The first line of each test case contains non-empty string S and the second line contains positive integer M.
+Each of the next M lines contains a pair of integers Li, Ri.
 
-",anton_lunyov,rajivka,http://discuss.codechef.com/problems/ARITHPR,"['anton_lunyov', 'medium', 'cook11']",            10-06-2011</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-321,ANUMLA,Mahesh and his lost array,/problems/ANUMLA,medium,"
-All submissions for this problem are available. Read problems statements in Mandarin Chinese and Russian as well.
+Output
+For each pair of each test case print the required number of substrings.
+Constraints
 
-Mahesh got a beautiful array named A as a birthday gift from his beautiful girlfriend Namratha. There are N positive integers in that array. Mahesh loved the array so much that he started to spend a lot of time on it everyday. One day, he wrote down all possible subsets of the array. Then for each subset, he calculated the sum of elements in that subset and wrote it down on a paper. Unfortunately, Mahesh lost the beautiful array :(. He still has the paper on which he wrote all subset sums. Your task is to rebuild beautiful array A and help the couple stay happy :)
+String S contains only lowercase Latin letters.
+1 ≤ Li ≤ Ri ≤ N.
+Sum of all length's of S for test cases is not greater than 50000. Sum of all M values for test cases is not greater than 50000.
 
+Example
+Input:
+2
+ababa
+4
+1 1
+1 5
+5 5
+3 4
+a
+1
+1 1
+Output:
+5
+9
+1
+5
+1
+ ",gerald,rustinpiece,http://discuss.codechef.com/problems/GERALD3,['gerald'],            8-11-2013</td>        <,            7 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+709,SPOTWO,Superpowers of 2,/problems/SPOTWO,easy,"
+All submissions for this problem are available. Read problems statements in  Mandarin Chinese  and  Russian.
+Cyael is a very gifted girl who loves Magic (she even reached the finals on a very famous tournament in Byteland ;) ) and Computer Science. As we know, CS is a very vast subject and Cyael learns what she can, little by little, by reading the editorials of codechef.com, her favourite programming website.
+Today, she came across a problem that was about calculating powers of two, and she got bored of it really fast, as she considers she knows all there is to know about powers of two. She knows how to compute even very big powers, like powers of 10, so it's obvious that for her, powers of two have no secrets :D
+But her friend Lira, as she was tired of hearing her boasting about her skills for calculating powers, decided to challenge her with a brand new task: computing what she calls,  SuperPowers of 2 . 
+ Cyael: ""Okay Lira, tell me about SuperPower of 2 so that I can solve one more problem and prepare for Codechef's November Long Challenge!! It's less than a month away!""
+ Lira: ""I define the Nth Superpower of 2 as being the number (2N_bin)2 , where N_bin stands for the decimal number encoded by the representation in base 2 of the number N.
+So, for example, the 2nd SuperPower of 2 is then equal to the number:
+(210)2 = 1048576
+ because,  N = 2 , and its binary encoding is 10 in decimal it is ten. So 210 = 1024 and 10242 = 1048576 
+Since the answer can be large, you are asked to compute SuperPowers of 2 modulo 1000000007.""
+After some time, Cyael finally solved the problem and decided to call Lira:
+ Cyael: ""Well, I admit I struggled more than I'd have expected on this problem... You should consider becoming a problem setter and set this problem for Codechef... Do you want me to call Bruno and ask him to set this problem on your behalf? He always finds a way of writing a fun problem statement!!"" 
+ Lira: ""Wooow!! That means Codechef community would solve my problem, modified by Bruno himself? Please do so, I'd love it!!!"" 
+ And now, here I am (yes, Bruno :D ) setting Lira's problem to all of you, but, with some differences regarding Lira's initial version, which hopefully you will appreciate. 
 Input
 The first line of the input contains an integer T denoting the number of test cases.
-First line of each test case contains one integer N, the number of elements in A.
-Second line of each test case contains 2^N integers, the values written on paper
+Then on the following T lines, there is an integer N, denoting the index of the SuperPower of 2 you need to compute modulo 1000000007.
 Output
-For each test case, output one line with N space separated integers in non-decreasing order.
+For each test case, output a single line containing the required value: the Nth SuperPower of 2 modulo 1000000007.
 Constraints
 
-1 ≤ T ≤ 50
-1 ≤ N ≤ 15
-0 ≤ Values on paper ≤ 10^9
-All input values are valid. A solution always exists
+1 ≤ N ≤ 600000
+T = 100000 on each official test-case file.
+Note: Your code will be judged against several input files.
 
 Example
-Input
-2
-1
-0 10
-2
-0 1 1 2
-
-Output
-10
-1 1
-Explanation
-Test case #2
-For the array [1,1], possible subsets are {}, {1}, {1}, {1,1}, respective sums are 0, 1, 1, 2. ",anudeep2011,kostya_by,http://discuss.codechef.com/problems/ANUMLA,"['anudeep2011', 'heap', 'cook51', 'greedy', 'multiset', 'easy']",            14-10-2014</td>        <,            2 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-328,CIRKILL,Circle of death,/problems/CIRKILL,easy,"
-All submissions for this problem are available.In the land of Chefton there is a trio of killers known as Team Rocket (TR). Chefton is basically a set of tiles, only a single person can stand on a tile at a given instance. Each tile can be described by X and Y co-ordinates describing the position of the tile. For the purpose of this problem, you may assume that a tile does not have any length of breadth. It is only a point.
-TR kill in a very unique way. Lets say the three members of the trio stand on the tiles T1, T2, T3 respectively. If a unique circle, say C, can be formed using T1, T2, T3 then all the people standing on the tiles lying within or on the circle C will be killed.
-Chefton Intelligence Agency (CIA) send their top agent Ash to Chefton. Let us assume that TR and Ash are standing on random tiles, satisfying the following constraints
-All four individuals, the three members of TR and Ash are on different tiles.
-There may be several ways in which the four individuals are placed. You may assume that the three members of TR are indistinguishable, while considering how many ways can everyone be placed. Any one of these ways now, is equiprobable. For clarity, refer to the explanation section.
-What is the probability that Ash can be killed by Team Rocket.
-Input
-The first line of the input contains an integer T, the number of test cases. The description of T test cases follows. The first line of each test case contains a single integer N, the number of tiles in Chefton. The next N lines consist of 2 space separated integers each, where the i'th line specifies the X and Y co-ordinates of the i'th tile.
-Output
-For each test case, output a single line containing the probability that Team Rocket kills Ash. Your answer is considered correct if it has an absolute error less than 10-6.
-Constraints
-1 ≤ T ≤ 10
-4 ≤ N ≤ 30
--50 ≤ X, Y ≤ 50
-All (X,Y) in a test case are unique.
-
-Sample
-
-Input
-2
-4
--1 0
-0 0
-0 1
-1 0
-5
--1 0
-0 -1
-0 0
-0 1
-1 0
-
-Output
-0.25
-0.4
-
-Explanation
-Test 1: There are 4 ways TR may be placed. Each one of them has the probability 0.25, of occuring.
-
-
-{ (-1,0), (0,0), (0,1) }, Ash is at (1,0). Ash cannot be killed even though TR has a valid and unique ""kill circle"".
-{ (-1,0), (0,0), (1,0) }, Ash is at (0,1). Ash cannot be killed because TR does not have a unique ""kill circle"".
-{ (-1,0), (0,1), (1,0) }, Ash is at (0,0). Ash can be killed since he is standing inside TR's ""kill circle"".
-{ (0,0), (0,1), (1,0) }, Ash is at (-1,0). Ash cannot be killed even though TR has a valid and unique ""kill circle"".
-
-
-Test 2: There are 10 ways TR may be placed. Each one of them has the probability 0.1, of occuring. For each one of those placements, Ash may be placed at one of the 2 remaining positions. Thus, with probability 0.05 each, there are 20 total arrangements to consider. Ash can be killed by TR in 8 of these 20 cases. ",kaushik_iska,gamabunta,http://discuss.codechef.com/problems/CIRKILL,"['july13', 'kaushik_iska', 'maths', 'easy', 'geometry']",            9-06-2013</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-333,COLLIDE,Collision in Space,/problems/COLLIDE,easy,"
-All submissions for this problem are available.
-
-Did you hear about the Nibiru collision ? It is a supposed disastrous encounter between the earth and a large planetary object. Astronomers reject this idea. But why listen to other people's beliefs and opinions. We are coders above all, so what better way than to verify it by a small code. The earth and N asteroids are in the 2D plane. Each of them is initially located at some integer coordinates at time = 0 and is moving parallel to one of the X or Y axis with constant velocity of 1 unit per second. 
-
-Direction of movement is given as 'U' ( Up = towards positive Y ), 'D' ( Down = towards negative Y ), 'R' ( Right = towards positive X ), 'L' ( Left = towards negative X ). Given the initial position and the direction of movement of the earth and each of the N asteroids, find the earliest time at which the earth collides with one of the asteroids. If there can not be any collisions with the earth, print ""SAFE"" ( without quotes ). You can ignore the collisions between asteroids ( i.e., they continue to move in same direction even after collisions between them ).
-Input
-
-First line contains T, number of test cases. T cases follow. In each test case, first line contains XE YE DIRE, where (XE,YE) is the initial position of the Earth, DIRE is the direction in which it moves. Second line contains N, the number of
-asteroids. N lines follow, each containing XA YA DIRA, the initial position and the direction of movement of each asteroid. No asteroid is initially located at (XE,YE)
-Output
-
-For each test case, output the earliest time at which the earth can collide with an asteroid (rounded to 1 position after decimal). If there can not be any collisions with the earth, print ""SAFE"" (without quotes).
-Constraints
-
-1 ≤ T ≤ 10
-1 ≤ N ≤ 2012
--100 ≤ XE, YE, XA, YA ≤ 100
-(XE,YE) != any of (XA,YA)
-DIRE, DIRA is one of 'U', 'R', 'D', 'L'
-Example
-
 Input:
-3
-0 0 R
+100000
+1
 2
-1 -2 U
-2 2 D
-1 1 U
-1
-1 0 U
-0 0 R
-1
-3 0 L
+(and 99998 more test cases...)
 
 Output:
-2.0
-SAFE
-1.5
-
-Explanation:
-
-
-Case 1 : 
-Time 0 - Earth (0,0) Asteroids { (1,-2), (2,2) }
-Time 1 - Earth (1,0) Asteroids { (1,-1), (2,1) }
-Time 2 - Earth (2,0) Asteroids { (1,0 ), (2,0) }
-Case 2 : 
-The only asteroid is just one unit away below the earth and following us always, but it will never collide :)
-Case 3 : 
-Time 0 - Earth (0,0) Asteroid (3,0)
-Time 1 - Earth (1,0) Asteroid (2,0)
-Time 1.5 - Earth (1.5,0) Asteroid (1.5,0)
-
-Note : There are multiple test sets, and the judge shows the sum of the time taken over all test sets of your submission, if Accepted.
-",flying_ant,masked_zorro  ,http://discuss.codechef.com/problems/COLLIDE,"['cook18', 'easy', 'flying_ant']",            9-01-2012</td>        <,            2 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-340,FBCHEF,Final Battle of Chef,/problems/FBCHEF,hard,"
+4
+1048576
+(and 99998 more answers...)
+  ",kuruma,,http://discuss.codechef.com/problems/SPOTWO,"['nov13', 'kuruma', 'easy']",            17-03-2013</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+765,SEAORD,Sereja and Order,/problems/SEAORD,hard,"
 All submissions for this problem are available. Read problems statements in Mandarin Chinese  and Russian.
-Chef declared war on Byteland. Chefs best scientist Pramod has designed a new Fighter Plane which can fly with Speed of Light!! So none of the defence forces of Byteland can defeat or defend it.
-Byteland has a structure of a tree with N cities connected by N-1 bidirectional roads. Each city has index between (1, N) (inclusive) and no two cities have same index. The capital city of Byteland has index 1. The distance between two cities is the number of roads in the path from one to other.
-If the plane drops a bomb on a city A, with damage value X then the damage done to a city B will be floor(X/2d) where d is the distance between A and B, note that as the distance of A from itself is 0, the damage done to A will be floor(X/20) = X.
-Each city has a certain wealth Wi in it, if it is damaged by a value of X then its wealth is reduced by X. On a day if the wealth of a city becomes less than or equal to zero then it is considered Economically Dead.
-Your task is to write a program that keeps track of the bombings done by the plane and answer the queries asked by the chef. The chef has a total of Q queries for you. There are two types of queries.1) Chef gives you two integers A and X, which means that the plane drops a bomb on the city with index A with damage value X. A bomb can also be dropped on economically dead city.2) Chef gives you an integer A and you need to print the number of cities that are economically dead which have A in the path from the capital to them.(See explanation for better understanding)
+Sereja have N programs. Sereja should run every program on two computers. Program number i works A[i] seconds on first computer and B[i] seconds on second. On each computer Sereja isn't able to run two programs in parallel, also Sereja isn't able to run one program on two computers in one moment. Sereja need to run all programs on both computers in minimal time. Help Sereja in his problem.
 Input
-First line contains an Integer representing N the number of cites.Next N lines contain one integer each, integer on the ith line represents the Wi, wealth of the city with index i.Next N - 1 lines contain two integers U and V each, which means that there is a road connecting cities U and V.Next line contains an integer Q, the number of Queries.Next Q lines represent one query each, if the first integer in the line is 1 then the query is of type 1, it is followed by two integers A and X, else the query is of type 2, it is followed by one integer A.(The meanings of the variables are well explained in the question)
+First line contain integer T number of test cases. T tests follow. First line of each test case contain integer N. Next N lines contain integers A[i], B[i].
+ 
 Output
-For each query of type 2 print the required value asked in the question.
+For each test case output optimal time in separated line. On the next N lines. In i-th line output pair of numbers X, Y X - start of working program number i on first computer, j - the same information for second computer.
+ 
 Constraints
-1 <= N <= 105 1 <= Q <= 105 1 <= A <= N
-1 <= U, V <= N, U ≠  V
-1 <= X <= 1051 <= Wi <= 109
+
+1 ≤ Sum of N over all the test cases ≤  200000 
+1 ≤ N ≤  10000 
+1 ≤ A[i], B[i] ≤  100000 
+
+ 
+Subtasks
+Subtask #1: 1 ≤ N ≤  10 , 1 ≤ T ≤  1000 (16 points)
+Subtask #2: 1 ≤ N ≤  500 (21 points)
+Subtask #3: 1 ≤ N ≤  10000 (63 points)
+ 
 Example
-
-Sample Input
-4
+Input:
 2
-5
-5
-2
-1 2
-2 3
-3 4
-4
-1 3 4
-2 2
-1 2 2
-2 1
-Sample Output
 1
+1 1
 3
-Explanation
-Path from Capital to City 1 : 1
-Path from Capital to City 2 : 1 <--> 2
-Path from Capital to City 3 : 1 <--> 2 <--> 3
-Path from Capital to City 4 : 1 <--> 2 <--> 3 <--> 4
-Cities having 1 in the path connected to Capital City : (1,2,3,4)
-Cities having 2 in the path connected to Capital City : (2,3,4)
-Cities having 3 in the path connected to Capital City : (3,4)
-Cities having 4 in the path connected to Capital City : (4)
-Distances of cities from city 1 : (0,1,2,3)
-Distances of cities from city 2 : (1,0,1,2)
-Distances of cities from city 3 : (2,1,0,1)
-Distances of cities from city 4 : (3,2,1,0)
-Initial Wealths of the Cities : (2,5,5,2)
-On the First Day a Bomb of Damage 4 is Dropped on City 3. So Damages Done to other Cities are (4/(22), 4/(21), 4/(20), 4/(21)) = (1,2,4,2). Wealths of Cities after Day 1 : (1,3,1,0)
-On the Second Day City 2 is queried. As only City 4 is dead, output is 1.
-On the Third Day a Bomb of Damage 2 is Dropped on City 2. So Damages Done to other Cities are (2/(21), 2/(20), 2/(21), 2/(22)) = (1,2,1,0). Wealths of Cities after Day 3 : (0,1,0,0)
-On the Fourth Day City 1 is queried. As Cities (1,3) are dead on third day and city 4 on first day, so the output is 3. ",adurysk,white_king,http://discuss.codechef.com/problems/FBCHEF,"['bit', 'april14', 'segment-tree', 'medium-hard', 'adurysk']",            17-01-2013</td>        <,            2 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-439,AMSEQT,Sequence Transmission,/problems/AMSEQT,medium,"
-All submissions for this problem are available.
-WARNING: This problem has large input / output files. Use of faster I/O methods is recommended.
-Chef has encrypted the super secret recipe for his bitsoup into a sequence of N unsigned integers A1, A2, ... AN. Each of these are M bit integers - meaning, their binary representation will only have at most M bits.
-Chef is now transmitting this recipe to the Sous Chef. He partitions the sequence into several disjoint, contiguous groups and sends them one by one. Each partition may contain one or more integers which are contiguous in the sequence. Chef can partition a sequence of N integers in many ways, but the receiving program of the Sous Chef has a constraint.
-For each group of integers it receives, let S represent the sum of the integers in the group. The receiver program only accepts the group of integers if the Mth least significant bit of S is 0. See the explanation section for clarity.
-Chef wants to know how many ways exist to partition the recipe such that the Sous Chef can receive it completely.
-Input
-The first line of the input contains an integer T denoting the number of test cases. The description of T test cases follows. The first line of each test case contains two integers N and M denoting the length of Chef's sequence and the number of bits that are adequate to represent each number in the sequence. The second line contains N space-separated integers A1, A2, ... AN denoting the sequence.
-Output
-For each test case, output a single integer denoting the number ways you can partition Chef's sequence such that the Sous Chef's receiving program will accept each partition. Since this number can be very large output this number modulo 1000000009.
-Constraints
-1 ≤ T ≤ 10
-1 ≤ N ≤ 200000
-1 ≤ M ≤ 18
-1 ≤ Ai < 2M
-Sample
+2 2
+1 1
+1 1
 
-Input:
+
+Output:
+2
+0 1
 4
-6 10
-4 4 4 4 4 4
-6 3
-4 4 4 4 4 4
+2 0
+0 2
+1 3
+
+.
+ ",sereja,,http://discuss.codechef.com/problems/SEAORD,"['hard', 'nov14', 'sereja']",            10-09-2014</td>        <,            2 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+775,CHEFLKJ,Chef and Array,/problems/CHEFLKJ,medium,"
+All submissions for this problem are available. Read problems statements in Mandarin Chinese, Russian and Vietnamese as well.
+Chef likes arrays and anything related to it. He call an array V dominating if there exists a number x (the dominator) whose number of occurrences in V  strictly greater than half the size of the array (that is, floor(|V|/2)).
+
+His friend Dmytro wants to make Chef happy, so he presented this interesting problem for Chef.
+Given an array A. You have to process Q queries on it. Queries can be one of two types:
+
+ 1 x y  - Assign value y to x-th element in array A, i.e. Ax = y.
+2 l r  - print ""Yes"" if subarray A[l..r] is dominating, ""No"" otherwise
+
+Input
+The first line of input contains two integers N and Q denoting the number of elements in A, and the number of queries to be executed.
+The second line of input contains N space separated integers denoting the array A.
+Each of the next Q lines contains one query.
+Output
+For each query of type 2, output the answer to the query in a single line.
+Constraints
+
+1 ≤ N, Q ≤ 105
+1 ≤ Ai, y ≤ 109
+1 ≤ x  ≤ N
+1 ≤ l  ≤  r  ≤ N
+
+Example
+Input:
 5 8
-1 1 1 1 128
-7 4
-4 5 6 7 8 9 10
+1 2 3 2 1
+2 1 5
+2 2 4
+1 3 2
+2 1 5
+1 2 3
+2 1 5
+1 3 1
+2 1 5
 
 Output:
-32
-4
-0
-3
-
+No
+Yes
+Yes
+No
+Yes
 Explanation
-Test Case 1. You can partition the sequence in 32 ways. Note that the sum of all the numbers in the sequence is 24. The 10th bit in 24 is already 0. Any partition's sum will be less than or equal to 24 anyway, thus each partitioning way is valid. Thus the answer is 32.
-If you don't see why the answer is 32, consider the following
-
-There is only 1 partition of { 4 }
-There are 2 partitions of { 4, 4 } => { {4}, {4} } and { {4,4} }
-There are 4 partitions of { 4, 4, 4 } => { {4}, {4}, {4} }, { {4}, {4,4} }, { {4,4}, {4} } and { {4,4,4} }
-There are 8 partitions of { 4, 4, 4, 4 } and so on..
+For first query, we have to tell whether the entire array A is dominating or not. It turns out that it is not dominating, because occurrences of 1 and 2 are equal to 2 (which is not more than half the size of array, i.e. 2) and that of 3 is 1.
+For second query, the subarray [2, 3, 2] is dominating and 2 is the dominator of it. Number of occurrences of 2 is 2 which is strictly greater than half the size of subarray, i.e. floor(3/2) = 1. ",mgch,karanaggarwal,http://discuss.codechef.com/problems/CHEFLKJ,"['cook72', 'segment-tree', 'medium', 'mgch']",            10-07-2016</td>        <,            2 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYPY, PYTH, PYTH 3.4, RUBY, SCALA, SCM chicken, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+814,CPERM,Count Permutations,/problems/CPERM,easy,"
+All submissions for this problem are available. Read problems statements in Mandarin Chinese, Russian and Vietnamese as well.
+Given N, count how many permutations of [1, 2, 3, ..., N] satisfy the following property.
 
 
-Test Case 2.The following 4 ways are the only ways to partition the sequence so that the Sous Chef's program accepts all the partitions.
+Let P1, P2, ..., PN denote the permutation. The property we want to satisfy is that there exists an i between 2 and n-1 (inclusive) such that
 
-{ {4,4}, {4,4}, {4,4} } => The 3rd bit is 0 in 8, which is the sum of values in each of the partitions.
-{ {4,4}, {4,4,4,4} } => The 3rd bit is 0 in 8 as well as 16, which is the sum of values in the two partitions respectively.
-{ {4,4,4,4}, {4,4} }
-{ {4,4,4,4,4,4} }
+Pj > Pj + 1  ∀    i ≤ j ≤ N - 1.
+Pj > Pj - 1  ∀    2 ≤ j ≤ i.
 
-
-Test Case 3. There is no way you can put 128 in any partition with the given sequence such that the Sous Chef's receiver would accept the partition.
-Test Case 4. The following 3 partitions are valid.
-
-{ {4}, {5}, {6}, {7,8,9,10} }
-{ {4}, {5}, {6,7,8}, {9,10} }
-{ {4,5,6,7,8,9,10} }
-
-
-",satej ,gamabunta,http://discuss.codechef.com/problems/AMSEQT,"['bit', 'easy', 'dynamic-prog', 'cook34', 'satej']",            17-05-2013</td>        <,            2 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-576,DIVIDING,Dividing Stamps,/problems/DIVIDING,easy,"
-All submissions for this problem are available. Read problems statements in Mandarin Chinese and Russian as well.
-
-Are you fond of collecting some kind of stuff? Mike is crazy about collecting stamps. He is an active member of Stamp Collecting Сommunity(SCC).
-
-
-SCC consists of N members which are fond of philately. A few days ago Mike argued with the others from SCC. Mike told them that all stamps of the members could be divided in such a way that i'th member would get i postage stamps. Now Mike wants to know if he was right. The next SCC meeting is tomorrow. Mike still has no answer.
-
-
-So, help Mike! There are N members in the SCC, i'th member has Ci stamps in his collection. Your task is to determine if it is possible to redistribute C1 + C2 + ... + Cn stamps among the members of SCC thus that i'th member would get i stamps.
 
 Input
-The first line contains one integer N, denoting the number of members of SCC.
-The second line contains N integers Ci, denoting the numbers of the stamps in the collection of i'th member.
+First line contains T, the number of test cases. Each test case consists of N in one line.
 Output
-The first line should contain YES, if we can obtain the required division, otherwise NO.
-
-Constraints
-1 ≤ N ≤ 100 000;
-1 ≤  Ci ≤ 109.
-Examples
-Input:
-5
-7 4 1 1 2
-
-Output:
-YES
-
-Input:
-5
-1 1 1 1 1
-
-Output:
-NO
- ",kostya_by,gerald,http://discuss.codechef.com/problems/DIVIDING,"['simple-math', 'cook44', 'kostya_by', 'cakewalk']",            24-02-2014</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-673,ANURRZ,Random Rudreshwar,/problems/ANURRZ,medium,"
-All submissions for this problem are available. Read problems statements in Mandarin Chinese and Russian as well.
-Problem description
-Rudreshwar likes random numbers and random arrays. Today Rudreshwar started playing with a couple of Arrays A and B, each of size N.
-Initially A is filled with zeros. Rudreshwar filled B with random numbers.
-Rudreshwar visits each index i (1 <= i <= N) in random order. When at i, he selects another random index j such that j is greater or equal to i. He then increments A[i], A[i+1], A[i+2] ... A[j] by 1.
-Finally if for any index i, A[i] is greater than B[i], he then throws away that array A
-For a given B, calculate the number of different arrays A, that Rudreshwar can end up with. Two arrays are called different if there exists an index where the arrays have different values
-Input
-The first line of the input contains an integer T denoting the number of test cases. The description of T test cases follows. First line of each test case contains an integer N. Second line contains N space separated integers representing the array B
-Output
-For each test case, output a single line containing the required answer modulo 1000000007.
+For each test case, output the answer modulo 109+7.
 Constraints
 
 1 ≤ T ≤ 100
-1 ≤ N ≤ 1000
-1 ≤ B[i] ≤ N
+1 ≤ N ≤ 109
+
+Subtasks
+
+Subtask #1(40 points): 1 ≤ N ≤ 1000
+Subtask #2(60 points): original constraints
 
 Example
 Input:
 2
 2
-2 2
 3
-1 1 1
 
 Output:
-2
-1
-Explanation
-Test case 1
-{1, 1} and {1, 2} are valid.
-Test case 2
-{1, 1, 1} is the only possible final array A. ",anudeep2011,xiaodao,http://discuss.codechef.com/problems/ANURRZ,"['cook54', 'anudeep2011', 'dynamic-prog', 'medium']",            6-01-2015</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-849,COT5,Count on a Treap,/problems/COT5,hard,"
-All submissions for this problem are available. Read problems statements in Mandarin Chinese  and Russian.
-In computer science, a treap is a binary search tree according to the keys and meanwhile a heap according to the weights. Follow the link for more details: http://en.wikipedia.org/wiki/Treap
-Your task is to maintain a max-treap supporting the following operations:
-
-0 k w: Insert a new node, whose key and weight are k and w.
-1 k: Delete a node in the treap with key k.
-2 ku kv: Return the distance between node u whose key is ku and node v whose key is kv.
-
-
-No two nodes share the same key or the same weight in the tree, and we guarantee the node is indeed in the treap before a delete operation takes place.
-
-Input
-The first line contains an integer N, the number of operations.
-Each of the next N lines contains two or three integers ""0 k w"" ""1 k"" or ""2 ku kv” . These integers describe the current operation.
-
-Output
-For each distance query, print the distance between u and v.
-Constraints
-
-1 ≤ N ≤ 200000
-0 < k, w, ku, kv  < 232
-
-Example
-Input:
-12
-0 4 17535
-0 10 38964
-0 2 21626
-0 1 61321
-2 1 10
-2 10 4 
-1 10
-1 1
-0 8 42634
-2 8 4
-2 8 2
-2 4 2
-
-Output:
-1
-2
-2
-1
-1
- ",xiaodao,laycurse,http://discuss.codechef.com/problems/COT5,['xiaodao'],            12-12-2013</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-858,CHEFINV,Chef and Swaps,/problems/CHEFINV,medium,"
-All submissions for this problem are available. Read problems statements in Mandarin Chinese  and Russian.
- 
-This time, Chef has given you an array A containing N elements.
-He had also asked you to answer M of his questions. Each question sounds like: ""How many inversions will the array A contain, if we swap the elements at the i-th and the j-th positions?"". 
-The inversion is such a pair of integers (i, j) that i < j and Ai > Aj. 
- 
-Input
-The first line contains two integers N and M - the number of integers in the array A and the number of questions respectively. 
-The second line contains N space-separated integers - A1, A2, ..., AN, respectively. 
-Each of next M lines describes a question by two integers i and j - the 1-based indices of the numbers we'd like to swap in this question. 
-
- 
-Output
-Output M lines. Output the answer to the i-th question of the i-th line.
- 
-Constraints
-
-1 ≤ N, M ≤ 2 * 105
-1 ≤ i, j ≤ N
-1 ≤ Ai ≤ 109
-Mind that we don't actually swap the elements, we only answer ""what if"" questions, so the array doesn't change after the question.
-
- 
-Example
-Input:
-6 3
-1 4 3 3 2 5
-1 1
-1 3
-2 5
-
-Output:
-5
-6
 0
+2
 
- 
-Explanation
-Inversions for the first case: (2, 3), (2, 4), (2, 5), (3, 5), (4, 5). 
-Inversions for the second case: (1, 3), (1, 5), (2, 3), (2, 4), (2,5), (4, 5). 
-In the third case the array looks like 1 2 3 3 4 5 and there are no inversions.  ",berezin,xcwgf666,http://discuss.codechef.com/problems/CHEFINV,"['sept14', 'fenwick', 'medium', 'berezin', 'inversions']",            24-03-2014</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-873,ANUAHR,Abhijeet and rectangles,/problems/ANUAHR,medium,"
-All submissions for this problem are available. Read problems statements in Mandarin Chinese and Russian as well.
-Problem description
-Abhijeet loves to play with rectangles. Today he has N rectangles of various sizes with him. He started to arrange them on the coordinate plane such that the area of intersection is maximized. However, he never rotated the rectangles he had, he only moved them here and there.
-Abhijeet soon realized that the game was boring and decided to introduce a modification. He decided to remove atmost M of those rectangles and arrange others on coordinate plane such that the area of intersection is maximized.
-Given the dimensions of N rectangles and M, can you answer maximum possible area of intersection with above rules?
-Note: If all the rectangles are removed, the area of intersection is considered as 0.
-Input
-The first line of the input contains an integer T denoting the number of test cases. The description of T test cases follows.First line of each test case has two integer N and M. N lines follow, each has two integers representing the length and breadth of the rectangle.
-Output
-For each test case, output a single line containing the required answer.
-Constraints
-
-1 ≤ T ≤ 105
-1 ≤ N ≤ 105
-0 ≤ M ≤ N
-1 ≤ Rectangle Dimensions ≤ 109
-1 ≤ Sum of N over all test cases ≤ 106
-
-Example
-Input:
-3
-1 1
-10 10
-2 0
-5 10
-5 5
-2 1
-1 1
-2 2
-
-Output:
-100
-25
-4
-Explanation
-Example case 1
-Abhijeet has only one rectangle. He can remove it, but then the area will be 0. Optimal way is not to remove it. Area = 10 * 10 = 100
-Example case 2
-Abhijeet cannot remove any rectangles in this case. He can however, place them such that the smaller 5 by 5 rectangle is completely inside the larger 5 by 10 rectangle. Then the area of intersection is 5 * 5 = 25
-Example case 3
-Abhijeet can remove atmost 1 rectangles in this case. He can remove the smaller rectangle of size 1 by 1. He is then left with 2 by 2 rectangle of area 4. ",anudeep2011,xiaodao,http://discuss.codechef.com/problems/ANUAHR,"['cook54', 'anudeep2011', 'medium', 'data-structure']",            15-01-2015</td>        <,            3 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYPY, PYTH, PYTH 3.4, RUBY, SCALA, SCM chicken, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-887,CTEAMS,Chef Teams,/problems/CTEAMS,easy,"
-All submissions for this problem are available.
-The executive chef is trying to bring some competitive spirit into his kitchen. He wants to split the chefs into two teams based on their age - he'll form the young and the old team. To make it fair, he will split them evenly or give the young team one person advantage when there is an odd number of chefs. Ages of all employees are unique. The executive chef also rated all chefs according to their cooking skills. Rating of a team is equal to the sum of ratings of its members. The chefs have developed a habit of coming to work late. The executive chef wants to keep the teams as fair as possible at all times and is therefore forced to change the teams each time one of the chefs comes to work in the morning. He needs your help with this task.
-Input
-The first line contains the number of chefs N. The following N lines describe the chefs in order as they come to work. Each chef is described by two integers, his or her age Ai and rating Ri.
-Output
-Every time a new chef joins the kitchen, output the absolute difference between team ratings.
-Constraints
-
-1 <= N <= 10^5
-1 <= Ai <= 10^9
-1 <= Ri <= 1000
-
-Example
-
-Input:
-5
-2 3
-1 7
-5 5
-3 1
-8 15
-
-Output:
-3
-4
-5
-4
-9
- ",thocevar,gamabunta,http://discuss.codechef.com/problems/CTEAMS,"['thocevar', 'easy', 'june11']",            13-04-2011</td>        <,            3 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-933,FARASA,Furik and Rubik and Sub Array,/problems/FARASA,hard,"
-All submissions for this problem are available.
-Furik and Rubik are playing the game Sub array. This game is played over an array of integers, consisting of N elements.
-
-In this game, Furik decides an integer that is equal to sum of some sub-array of this array and Rubik wants to guess this number.
-
-But, since Rubik is a busy man, he wants to know how many times in the worst case he will have to try to guess this number. You may assume he acts optimally, i.e. he doesn't call the same number twice, and calls only those numbers, that might have been decided by Furik, meaning, the sum of some or the other sub-array.
-
-Let's call the array b, sub-array of the array a, if there are numbers l and r such, that b1 = al AND b2 = al+1 AND ... b|b| = ar, where |b| is the length of the array b.
-
-Input
-
-The first line contains the positive integer N. The second line contains N positive integers, which are the elements of the array.
-Output
-
-Output a single line containing the answer to the problem.
-Constraints
-
-Test Files with Time Limit set to 2 seconds
-1 ≤ N * S ≤ 1010, where S is the sum of the elements in the array.
-Test Files with Time Limit set to 4 seconds
-1 ≤ N * S ≤ 4 * 1010
-
-Sample
-
-Input
-3
-1 2 3
-
-Output
-4
-
-Input
-9
-6 1 7 3 7 1 8 5 7
-
-Output
-28
 
 Explanation
-Test Case 1: Furik can decide one of the following numbers: 1, 2, 3, 5, 6. For example, let us assume Furik has decided 3. In the worst case, Rubik may call out 4 numbers, since there are only 5 such numbers. ",sereja,gamabunta,http://discuss.codechef.com/problems/FARASA,"['sereja', 'fft', 'july13', 'maths', 'hard']",            7-05-2013</td>        <,            2 - 4 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-959,BTREE,Union on Tree,/problems/BTREE,hard,"
-All submissions for this problem are available. Read problems statements in Mandarin Chinese  and Russian.
-There is a country whose road system is a tree, the nodes in the tree represent cities and the edge is the road between them, and each edge is of unit length. For safety, the government should put guards to protect all cities. But the government is in shortage of money. So they might not be able to protect all cites.
-You're concerned about the country's safety, so you get the information of the guards. And you know that on the i-th day, there are k[i] guards on the road system, and j-th guard is on node a[j] and can protect every node whose distance to a[j] is not larger than r[j]. And you want to know how many nodes in the road system is protected by at least one guard.
-Input
-The first line contains an integer n, denoting the number of the cities.
-Then n-1 lines follows, each line contains 2 integers a and b, denoting there is an edge between city a and b (1-based index).
-The next line contains an integer Q, denoting the number of the days.
-Then Q lines's description follows, each contains an integer k, denoting the number of guards in that day, and k integer pairs a[i],r[i] denoting the guards's information, for simplicity, no node will have more than 1 guard.
-Constraints
 
- 1 ≤ n, Q ≤ 50000. 
- The total number of guards in the queries ≤ 500000. 
+Test case 1:
+No permutation satisfies.
+Test case 2:
+Permutations [1, 3, 2] and [2, 3, 1] satisfy the property.
+ ",darkshadows,xcwgf666,http://discuss.codechef.com/problems/CPERM,"['combinatorics', 'nov16', 'fast-expo', 'darkshadows', 'easy']",            18-04-2014</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+819,TACTQUER,Shortest path queries,/problems/TACTQUER,hard,"
+All submissions for this problem are available. Read problems statements in Mandarin Chinese, Russian and Vietnamese as well.
+
+With the impressive achievement in competitive programming Jem was offered an internship at IBER - a tech company that provides an alternative to tradditional taxi service.
+
+
+Jem first task was help IBER quickly calculate the distance between two arbitrary locations in Jem's city. As an experienced competitive programmer Jem understand that this is not a trivial problem with general graph. Fortunately after investigate the city map Jem found out that the roads system is have a special form which may make Jem's problem easier to deal with.
+
+
+There are N locations in the city and M bidirectional road connecting them. Each road i have the length of Ci and no two road connect the same pair of locations. The roads system is designed in a way that from a specific location one can travel to any other locations. The most important point is that there is no location belong to more than one cycle in the graph corresponding to road network.
+
+
+So Jem already got his solution. If you want to secure an internship at IBER maybe you can try to solve this problem too!
+
+Input
+
+
+
+    The first line of the input contains two number N and M
+
+
+    In the next M line each line contains three numbers u, v and c represent a road of length c connects location u and v.
+  
+
+    Next line contains a single number Q represents the number of queries.
+  
+
+    In the next Q lines each line contains two numbers u and v corresponding to a query of the length of the shortest path between location u and v.
+  
+
 
 Output
-For each day, output the answer in one line.
+
+For each query print out the corresponding result in one line.
+
+Constraint
+
+
+
+      2 ≤ N ≤ 105
+
+
+      1 ≤ M ≤ 2 × 105
+
+
+      1 ≤ Q ≤ 105
+
+
+      1 ≤ c ≤ 104
+
+
+
+
 Example
-Input:
-20
-1 2
-1 3
+
+Input 1:
+4 3
+1 2 2
+2 3 3
+2 4 4
+2
 1 4
-4 5
-4 6
-2 7
-4 8
-5 9
-7 10
-2 11
-9 12
-8 13
-1 14
-12 15
-9 16
-7 17
-12 18
-1 19
-6 20
-5
-2 9 3 12 5 
-3 3 3 4 1 11 5 
-3 3 3 10 4 19 2 
-2 3 4 10 2 
-5 5 4 11 2 16 2 18 1 19 2
-Output:
-16
-16
-13
-16
-18
- ",wjmzbmr,shangjingbo,http://discuss.codechef.com/problems/BTREE,"['wjmzbmr', 'hard', 'oct14', 'lca']",            26-08-2014</td>        <,            2.5 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-969,CLUE,Get a Clue,/problems/CLUE,hard,"
-All submissions for this problem are available.
-A group of 5 logicians are playing a game of Clue (also known as Cluedo).  The game is played with 18 cards:
-6 ""suspect"" cards, 6 ""weapon"" cards, and 6 ""room"" cards (the original game has 9 room cards, but the logicians
-have removed 3 in order for everyone to receive the same number of cards).  At the beginning of the game, 1 of each type of
-card is chosen at random and placed in an envelope, whose contents are kept secret.  The remaining cards are
-then dealt out randomly to the players, 3 cards each.  The goal of the game is
-to be the first player to determine which cards are in the envelope.  To make things more interesting, the
-logicians have modified the rules to the game as follows:
-First of all, the cards are each given a unique number: The ""suspect"" cards are given numbers 1-6, the
-""weapon"" cards numbers 7-12, and the ""room"" cards 13-18.  At the start of play, each logician announces
-the sum of his cards to the group.  Then, starting with the first logician and continuing in a circle, each logician
-will either pass, or declare himself the winner by announcing the contents of the secret envelope.  After the fifth
-logician's turn, it becomes the first logician's turn again.  The
-logicians are very smart, and will never pass if it's possible for them to deduce the contents of the
-envelope, nor will they ever attempt to guess the contents of the envelope when they don't know with certainty.
-Furthermore, all of the logicians are aware of the fact that none of them will pass if it's
-possible to win.
-Your task is to determine, given the distribution of the cards, which logician will win (if any).
-Input:
-Input begins with an integer T (about 100), the number of test cases.
-Each test case consists of 5 lines of 3 integers each, indicating the cards held by each of the
-5 logicians.  Each integer will be between 1 and 18, inclusive, and exactly one integer from each
-of the ranges 1-6, 7-12, and 13-18 will be absent from each test case.  The first line corresponds
-to the logician whose turn is first, the second line to the logician whose turn is second,
-and so on.  Each test case is separated by a blank line
-Output:
-For each test case output a single integer, on a line by itself, indicating the (1-based) index of the
-logician who wins the game, or -1 if the game has no winner (i.e. continues forever).
-Sample Input:
-2
-
-6 10 16
-3 2 11
-8 9 12
-15 17 18
-4 5 14
-
-1 4 5
-7 10 11
-3 6 9
-12 14 15
-16 17 18Sample Output:
-1
-2Explanation:
-In the first example, the cards in the envelope are 1, 7, and 13.  All of the logicians immediately know this,
-however the first logician wins because it must be one's turn in order to win.
-In the second example, the cards in the envelope are 2, 8, and 13.  Note that initially the second player does not
-have enough information to determine which cards are in the envelope.  However, the fact
-that the first player passes is enough for the second player deduce the first player's cards (if the first player
-had been holding 2 3 5, for example, he would have won instead of pass), which in turn allows him to
-determine the secret cards and win.
-",pieguy,anshuman_singh,http://discuss.codechef.com/problems/CLUE,"['oct10', 'hard', 'pieguy']",            9-06-2010</td>        <,            3 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYPY, PYTH, PYTH 3.4, RUBY, SCALA, SCM chicken, SCM guile, SCM qobi, ST, TEXT, WSPC</td>        <"
-978,DORADM01,Lights Out,/problems/DORADM01,hard,"
-All submissions for this problem are available.
-Johnny is playing Lights Out, an electronic game consisting of an NxN grid of lights. Initially, each light may be on or off. Pressing a light will toggle it and the lights non-diagonally adjacent to it.
-
-The object of the game is to try and get all the lights turned off. It is not always possible, and what's more, Johnny's game is faulty. Pressing some lights has no effect. (They can still be turned on and off if they are next to working lights.)
-
-Help Johnny write a program that checks whether a puzzle can be solved or not, given the initial description of the grid and the positions of the faulty lights.
-Input
-The first line contains a number t (about 10), the number of test cases. Each test case has the following form:
-
-The first line contains two numbers N and K (2 <= N <= 200, 0 <= K <= N). Each line in the next N lines contains N characters '0' or '1' representing the initial state of the grid. '1' denotes a light that is on and '0' a light that is off.
-
-Each line in the next K lines contains 2 integers, i and j (1 <= i, j <= N), representing the row and column of a faulty light. Rows are numbered from the top and columns from the left.
-Output
-For each test case, print YES if there is a solution, otherwise print NO.
-Example
-
-Input:
-2
-
-3 1
-010
-111
-010
-2 2
-
-4 2
-1110
-1110
-1001
-1101
-2 2
 4 3
 
-Output:
-NO
-YES
+Output 1:
+6
+7
 
-",MichaelD,keshav_57,http://discuss.codechef.com/problems/DORADM01,"['hard', 'may10', 'MichaelD']",            9-04-2010</td>        <,            2 - 4 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYPY, PYTH, PYTH 3.4, RUBY, SCALA, SCM chicken, SCM guile, SCM qobi, ST, TEXT, WSPC</td>        <"
-1022,BOGOSORT,Bogosort,/problems/BOGOSORT,easy,"
-All submissions for this problem are available.
-
-Recently Johnny have learned bogosort sorting algorithm. He thought that it is too ineffective. So he decided to improve it. As you may know this algorithm shuffles the sequence randomly until it is sorted. Johnny decided that we don't need to shuffle the whole sequence every time. If after the last shuffle several first elements end up in the right places we will fix them and don't shuffle those elements furthermore. We will do the same for the last elements if they are in the right places. For example, if the initial sequence is (3, 5, 1, 6, 4, 2) and after one shuffle Johnny gets (1, 2, 5, 4, 3, 6) he will fix 1, 2 and 6 and proceed with sorting (5, 4, 3) using the same algorithm. Johnny hopes that this optimization will significantly improve the algorithm. Help him calculate the expected amount of shuffles for the improved algorithm to sort the sequence of the first n natural numbers given that no elements are in the right places initially.
-Input
-The first line of input file is number t - the number of test cases. Each of the following t lines hold single number n - the number of elements in the sequence.
-Constraints
-1 <= t <= 150
-2 <= n <= 150
-Output
-For each test case output the expected amount of shuffles needed for the improved algorithm to sort the sequence of first n natural numbers in the form of irreducible fractions.
-Example
-
-Input:
+Input 2:
+7 8
+1 2 2
+1 3 4
+2 3 1
+3 4 1
+4 5 1
+4 7 1
+5 6 2
+6 7 1
 3
+1 4
+5 7
+1 6
+
+
+Output 2:
+4
 2
 6
-10
 
-Output:
-2
-1826/189
-877318/35343
+Explaination
+
+Test 2: the graph is shown in the picture below.
 
 
-",spooky ,subra,http://discuss.codechef.com/problems/BOGOSORT,"['feb11', 'easy', 'spooky']",            6-08-2010</td>        <,            2 sec</td>        <,            10000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TEXT, WSPC</td>        <"
-1023,CHEFWD,Chef World,/problems/CHEFWD,medium,"
-All submissions for this problem are available.
-
-Chef Ciel lives in a long street which can be thought as of x-axis of coordinate system.
-Her house is at coordinate 0 whereas her restaurant is situated at coordinate N.
-Usually Ciel goes from home to restaurant taking a step of size 1 or 2 in forward direction.
-We all know how much Chef loves Fibonacci numbers.
 
 
-But today, Ciel being little casual stepped in wrong direction on her way to her restaurant exactly once and of course she did not set her foot wrong at home.
-Now she wonders how many ways she can reach her restaurant provided that she stepped wrong once but not at home.
- She does not go past her restaurant because it is altogether different world and once she reaches her restaurant she stops.
+
+The shortest path for each query are:
 
 
-For example, if N is 3 then
-0 -> 1 -> -1 -> 0 -> 1 -> 3,
-0 -> 2 -> 1 -> 3
-are some possible ways where as
-0 -> -1 -> 1 -> 3, (She did not set her foot wrong at her home)
-0 -> 1 -> 3, (She sets her foot wrong direction exactly once)
-0 -> 1 -> 0 -> 3, (Her steps are always size 1 or 2)
-0 -> 1 -> 2 -> 4 -> 3, (She does not go past her restaurant)
-0 -> 1 -> 2 -> 3 -> 2 -> 3 (Once she reaches her restaurant, she stops)
-are not. 
+ From 1 to 4: 1 -> 2 -> 3 -> 4
+
+
+  From 5 to 7: 5 -> 4 -> 7
+
+
+From 1 to 6: 1 -> 2 -> 3 -> 4 -> 7 -> 6
+
+
+ ",tuananh93,errichto,http://discuss.codechef.com/problems/TACTQUER,"['tuananh93', 'graph', 'dp', 'hard', 'cook74']",            9-09-2016</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYPY, PYTH, PYTH 3.4, RUBY, SCALA, SCM chicken, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+843,QMAXTRIX,Query over Matrix,/problems/QMAXTRIX,easy,"
+All submissions for this problem are available. Read problems statements in Mandarin Chinese , Russian and Vietnamese  as well.
+ Read problems statements in Mandarin Chinese , Russian and  Vietnamese
+
+There is a N*N square matrix. You have been given N specifications, one per row of the matrix. The ith specifications is represented by a pair of integers L[i] and R[i], denoting that all element belonging to columns between L[i] and R[i] (both inclusive) in row i are 1, while the rest of the elements of the ith row are 0.
+
+
+Now you will be given an integer Q, followed by Q operations: Each query is described by two integers x and y, which asks what will be the parity of the sum of the matrix if the xth row and the yth column are removed from the matrix. 
+
 Input
 
-First line of input contains T, number of test cases which is at most 10000.
-Then T lines follows each containing a positive integer N which is at most 1000000000000000 (1015).
+
+
+First line of the input contains an integer N, followed by N lines: each containing a pair of integers. ith pair of integers denotes the value of L[i] and R[i].
+
+
+The next line contains the value of Q, and the following Q lines contain the queries. 
+
+
 
 Output
 
-Number of ways Ciel can reach her restaurant modulo 1000000007 (109+7).
+Q lines, each containing a single character ""E"" or ""O"" (no quotes needed), indicating whether the sum is even or odd.
 
-
-Sample Input:
-2
-3
-4
-
-Sample Output:
-18
-44
- ",div_adm,laycurse,http://discuss.codechef.com/problems/CHEFWD,"['matrix-expo', 'fibonacci', 'div_adm', 'sep12', 'maths']",            3-05-2012</td>        <,            2 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-1053,DUALPAL,Chef and the Dual Palindromes,/problems/DUALPAL,hard,"
-All submissions for this problem are available. Read problems statements in Mandarin Chinese and Russian as well.
-A number is called a Dual Palindrome if it's representation in bases B1 and B2 are both palindromes.  e.g. Let  B1 = 3, B2 = 4, then number 130 (in base 10) will be called a Dual Palindrome, as it is palindrome in base 3 (11211) as well as in base 4 (2002). However, it is not a Dual Palindrome for B1 = 3 and B2 = 5 as it's not a palindrome in base 5(1010).
-Given two integers B1 and B2, Chef wants to find Dual Palindromes less than 260. If there are more than 1000 Dual Palindromes, then output the first 1000 only (these numbers should be in base 10).
-Input
-The fine line of the input contains an integer T denoting the number of test cases.
- Each test case consists of a single line containing two space separated integers: B1 and B2, respectively.
-Output
-For each test case, output a list of space separated integers which are Dual Palindromes less than 260 for the input bases. If there are more than 1000 Dual Palindromes, then output the first 1000 only. The numbers should be printed in an ascending order.
 Constraints
 
-1 ≤ T ≤ 5
- 2 ≤ B1 < B2 ≤ 16 
+Subtask #1: 20 points
+
+1 ≤ N,Q ≤ 1000, 1 ≤ L[i] ≤ R[i] ≤ N,1 ≤ x,y ≤ N  
+
+
+
+Subtask #2: 80 points
+
+1 ≤ N,Q ≤ 105, 1 ≤ L[i] ≤ R[i] ≤ N, 1 ≤ x,y ≤ N  
+
 
 Example
 Input:
-1
-2 3
-
-Output:
-1 6643 1422773 5415589 90396755477 381920985378904469
-Note
-Source limit for the problem is 8000B instead of usual 50000B. ",rustinpiece,iscsi,http://discuss.codechef.com/problems/DUALPAL,"['cook61', 'maths', 'backtracking', 'rustinpiece', 'hard']",            31-07-2015</td>        <,            8 sec</td>        <,            8000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYPY, PYTH, PYTH 3.4, RUBY, SCALA, SCM chicken, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-1147,COALSCAM,Coal Scam,/problems/COALSCAM,medium,"
-All submissions for this problem are available.
-Chef has entered the politics of Byteland. He is a minister in the coal department of the government. Recently, he has been assigned a project on constructing special bidirectional roads for transferring coals in such a way that the whole country is connected by a road network.
-Different companies submitted their proposal of roads that they could build along with their estimated cost of the road. Chef has to select a subset of these proposed roads so that all cities of the country are connected.
-Chef, corrupt as he is, managed to submit bids by his own company for certain roads. If some of his proposed roads are selected, he'd use low grade material. We can safely assume that the cost of building these roads is nothing to him. He would still receive the price he has quoted in the bid and hence, would make as much profit. He wants to choose some subset of proposed roads so that his own profit is maximised.
-Byteland consists of N cities. There are M1 proposals to build roads by companies other than Chef's. Chef's company has proposed to build M2 roads. Chef wants to choose a subset of these roads in such a way that for each pair of cities, there is exactly one path of roads connecting them. The profit Chef will gain is equal to the sum of costs of the roads chosen from among those made by Chef's company.
-Help Chef choose the roads in such a way that his profit is maximized. If there are multiple ways to achieve that, choose the way where the sum of costs of all chosen roads is minimized.
-Input
-The first line of the input contains a number T, the number of test cases. This is followed by the input for each test case one by one. The first line of each test case contains three space-separated integers N, M1, and M2. Then M1 lines follow, each containing a description of a road proposed by other companies. Each of these lines contains three space-separated integers u, v, and c, where u and v denote the end points of the road and c denotes the associated cost. Then M2 lines follow, each containing a description of a road proposed by Chef's company in the same format.
-Output
-Output a single line for each test case. If it is impossible to choose a subset of the roads in such a way that for each pair of cities, there is exactly one path of roads connecting them, output a single line containing ""Impossible"" (quotes for clarity and starts with an uppercase 'I') for that test case. Otherwise, output a single line containing two space-separated integers: the maximum profit Chef can gain and the minimum total cost of the chosen roads that yields the maximum profit.
-Example
-
-Input:
-2
-3 2 1
-0 1 5
-1 2 4
-0 1 10
-3 1 1
-0 1 1
-0 1 3
-
-Output:
-10 14
-Impossible
-Constraints
-
-1 ≤ T ≤ 5
-2 ≤ N ≤ 5,000
-1 ≤ M1 ≤ 20,000
-1 ≤ M2 ≤ 20,000
-For each proposed road, the end points will be two different cities.
-There may be several proposed roads between the same pair of cities.
-For each proposed road, 0 ≤ c ≤ 1,000,000,000
-Each input file will not be larger than 4 MB (4,000,000,000 bytes) in size.
-
-",yellow_agony,gamabunta,http://discuss.codechef.com/problems/COALSCAM,"['yellow_agony', 'kruskal', 'cook26', 'easy']",            2-09-2012</td>        <,            2 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-1227,COOLGUYS,Cool Guys,/problems/COOLGUYS,easy,"
-All submissions for this problem are available.Given an integer N. Integers A and B are chosen randomly in the range [1..N]. Calculate the probability that the Greatest Common Divisor(GCD) of A and B equals to B.
-Input
-The first line of the input contains an integer T denoting the number of test cases. The description of T test cases follows. Each test case consists of a single integer N on a separate line.
-Output
-For each test case, output a single line containing probability as an irreducible fraction. 
-Example
-Input:
 3
-1
+1 3
+2 2
+1 3
 2
-3
+2 2
+3 2
 
 Output:
-1/1
-3/4
-5/9
-Constraints
+E
+E
 
-1<=T<=103
-1<=N<=109 ",Rubanenko,xcwgf666,http://discuss.codechef.com/problems/COOLGUYS,"['Rubanenko', 'number-theory', 'easy', 'sept13']",            1-05-2013</td>        <,            3 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
-1267,DIGFORST,Digits Forest,/problems/DIGFORST,hard,"
+Explanation
+The given array is:
+1 1 1
+0 1 0
+1 1 1
+It's easy to see that the sum is even in both the queries.
+ ",amitpandeykgp,pushkarmishra,http://discuss.codechef.com/problems/QMAXTRIX,"['amitpandeykgp', 'ltime30', 'implementation', 'precomputation']",            3-11-2015</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYPY, PYTH, PYTH 3.4, RUBY, SCALA, SCM chicken, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+882,TPRODUCT,Tree Product,/problems/TPRODUCT,easy,"
 All submissions for this problem are available.
-Given a simple undirected graph containing N vertices numbered 1 to N, each vertex containing a digit from {1,2,..7}. Starting at the vertex 1 with an empty string S, we travel through some vertices (with no limitations) to the vertex N. For every vertex on the way, we add the respective digit to the right of the string S. At last we get S as a decimal integer. You are requested to find such a way satisfying S is divisible by all of its digits, and the sum of digits of S must be as small as possible.
+Given a complete binary tree with the height of H, we index the nodes respectively top-down and left-right from 1. The i-th node stores a positive integer Vi. Define Pi as follows: Pi=Vi if the i-th node is a leaf, otherwise Pi=max(Vi*PL, Vi*PR), where L and R are the indices of the left and right children of i, respectively. Your task is to caculate the value of P1.
 
 Input
 There are several test cases (fifteen at most), each formed as follows:
 
-The first line contains a positive integer N (N ≤ 100).
-The second line contains N digits (separated by spaces), the i-th digit is the value of the i-th vertex.
-N last lines, each contains N values of {0, 1} (separated by spaces), the j-th value of the i-th line is equal to 1 if there is an edge connecting two vertices (i, j), otherwise 0.
+The first line contains a positive integer H (H ≤ 15).
+The second line contains 2H-1 positive integers (each having a value of 109 at most), the i-th integer shows the value of Vi.
 
-The input is ended with N = 0.
+The input is ended with H = 0.
 
 Output
-For each test case, output on a line the minimum sum of digits found, or -1 if there's no solution.
+For each test case, output on a line an integer which is the respective value of P1 found, by modulo of 1,000,000,007.
 
 Example
 
 Input:
-4
-1 2 1 4
-0 1 1 1
-1 0 0 1
-1 0 0 1
-1 1 1 0
+2
+1 2 3
+3
+3 1 5 2 6 4 7
 0
 
 Output:
+3
+105
+
+
+Explanation:
+The second test case is constructed as follows:
+
+     3
+    / \
+   /   \
+  1     5
+ / \   / \
+2   6 4   7
+ ",anhdq,pieguy,http://discuss.codechef.com/problems/TPRODUCT,"['may11', 'easy', 'anhdq']",            21-02-2011</td>        <,            2 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+901,A5,Packing the Boxes,/problems/A5,hard,"
+All submissions for this problem are available.
+This problem was part of the CodeChef April Challenge.  All user submissions for this contest problem are publicly available here.
+Shaheen has bought some gifts for a friend, which are wrapped up in several boxes of different sizes (all of which are full). She will need to carry the gifts a long way to her friend's house, so she would prefer to add some extra packing, and accommodate everything in one extra box. Moreover, to avoid damaging the contents, she does not wish to place more than two boxes directly within any box; however, boxes can be placed within boxes which contain other boxes, etc. A box which is used for holding two boxes of sizes a and b will have size a+b, and will cost Shaheen a+b coins at the local store. Please help Shaheen determine the minimum cost required to achieve the complete packing, and the number of different possible packings (arrangements of boxes within each other) having such a minimal cost.
+Input
+The first line of input is n <=2000, the number of boxes with Shaheen's gifts. The next n lines of input contain one positive integer each, not greater than 106, representing the sizes of the successive boxes.
+
+Output
+
+Print to output exactly 2 numbers separated by spaces: the cost of the optimal solution, and the number of distinct ways of achieving this solution (modulo 109).
+
+Example
+
+Input:
+5
+3
+2
+3
+5
+1
+
+Output:
+31 3
+
+
+Explanation:
+The three solutions leading to cost 31 are as follows:",admin,,,['admin'],            1-12-2008</td>        <,            2 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PHP, PIKE, PRLG, PYPY, PYTH, PYTH 3.4, RUBY, SCALA, SCM chicken, SCM guile, SCM qobi, ST, TEXT, WSPC</td>        <"
+1036,CHEFQUE,Chef and Queries,/problems/CHEFQUE,easy,"
+All submissions for this problem are available. Read problems statements in Mandarin Chinese, Russian and Vietnamese as well.
+
+As part of his daily job, Chef has to solve problems involving sets. Till now, Chef has been using inefficient methods to solve his set related problem, wasting a lot of his precious time. He has agreed to pay you a lot of money for solving the following problem for him efficiently.
+
+
+First, Chef needs to perform Q operations on a set. Each operation is either:
+
+1. Add a number to the set (if this number is NOT already present in the set).
+2. Erase a number from the set (if this number exists in the set).
+
+
+Then, he needs to find the sum of all elements of the set after performing these Q queries. Your job is to find this sum for him quickly.
+
+Input
+The first line of input contains four integers — Q, S1, A, B. S1 is the first number in the operations. A and B are special constants explained later.
+
+Every operation Si is represented by a single integer. If Si is odd, then it represents the first operation, otherwise the second type, and in both of them the integer you have to add/delete equals [Si / 2], where [] is the greatest integer (or floor) function.
+
+Si = (A*Si-1 + B) mod 232 when i > 1.
+
+
+Note: In this problem, the time limit is very tight. Using built-in data structures, such as set/unordered_set in C++ or TreeSet/HashSet in Java, may lead to a Time Limit Exceed verdict.
+
+Output
+Output a single line containing a single integer — sum of elements in the set after Q queries.
+
+Constraints
+
+1 ≤ Q ≤ 107
+1 ≤ S1, A, B ≤ 109
+
+Example
+
+Input:
+5 1 1 1
+
+Output:
+3
+
+
+Input:
+10000000 777777777 777777777 777777777
+
+Output:
+5362358669068782
+
+Explanation:
+
+The sequence {Si} is 1, 2, 3, 4, 5:
+
+Operation 1, 1 mod 2 = 1, add number [1 / 2] = 0 to set, sum is 0.
+
+
+Operation 2, 2 mod 2 = 0, erase number [2 / 2] = 1 from set, 1 is not in set, so nothing happens, sum is 0.
+
+
+Operation 3, 3 mod 2 = 1, add number [3 / 2] = 1 to set, sum is 1.
+
+
+Operation 4, 4 mod 2 = 0, erase number [4 / 2] = 2 from set, 2 is not in set, so nothing happens, sum is 1.
+
+
+Operation 5, 5 mod 2 = 1, add number [5 / 2] = 2 to set, sum is 3.
+ ",mgch,,http://discuss.codechef.com/problems/CHEFQUE,"['bitset', 'cook65', 'easy-medium', 'mgch', 'hashing']",            9-12-2015</td>        <,            2 sec</td>        <,            50000 Bytes</td>        <,"            <td>C, CPP14, JAVA, PYTH, PYTH 3.4</td>        <"
+1098,ARRANGE2,Rearranging Digits,/problems/ARRANGE2,hard,"
+All submissions for this problem are available.
+
+A number X is called Permut number if X and 2X ( both without leading zeroes ) have same number of digits and are permutations of each other. Given A and B, find the number of Permut numbers >= A and <= B.
+
+
+Note : X is called permutation of Y if every digit ( 0 - 9 ) occurs same number of times in both the numbers ( maybe at different positions ).
+
+
+Input :
+
+
+The first line contains the number of test cases T. T lines follow, containing two integers A and B.
+
+
+Output :
+
+
+Output T lines, one for each test case containing the desired answer for the corresponding test case.
+
+
+Sample Input :
+2
+1 100
+499875921 499875921
+
+
+Sample Output :
+0
+1
+
+
+Constraints :
+1 <= T <= 10000
+1 <= A <= B <= 10000000000 (10^10)
+ ",syco,anshuman_singh,http://discuss.codechef.com/problems/ARRANGE2,"['july10', 'hard', 'syco']",            5-05-2010</td>        <,            1 sec</td>        <,            5000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYPY, PYTH, PYTH 3.4, RUBY, SCALA, SCM chicken, SCM guile, SCM qobi, ST, TEXT, WSPC</td>        <"
+1144,AMSTRING,Andrew and the Strings,/problems/AMSTRING,medium,"
+Andrew likes strings very much.
+He has two strings A and B of N lower alphabet letters. We denote S[i, j] as the substring from ith to jth characters of string S.
+Andrew is interested in the number of such fours of integers (LA, RA, LB, RB), where 1 ≤ LA ≤ RA ≤ N, 1 ≤ LB ≤ RB ≤ N, and RA − LA = RB − LB, such that the Hamming distance between substrings A[LA, RA] and B[LB, RB] is not greater than K. Here the Hamming distance between two strings of the same length is the number of unequal characters on the same positions of strings.
+Help him and find this number.
+Input
+The first line of the input contains an integer T, denoting the number of test cases. The description of T test cases follows. The first line of each test case contains two space-separated integers N and K. The second line contains string A, and the third line contains string B.
+Output
+For each test case, output an integer, denoting the number of fours (LA, RA, LB, RB) satisfying the conditions described in the problem statements.
+Constraints
+
+1 ≤ T ≤ 10
+1 ≤ N ≤ 1000
+1 ≤ K ≤ N
+Both A and B are contain only N lower alphabet letters
+
+Example
+Input:
+3
+3 2
+aba
+abb
+3 2
+abc
+def
+1 1
+a
+a
+
+Output:
+14
+13
+1
+Explanation
+Example case 1: There are 14 fours as following:(1, 1, 1, 1) : dist(A[1, 1], B[1, 1]) = dist(a, a) = 0 ≤ 2(1, 1, 2, 2) : dist(A[1, 1], B[2, 2]) = dist(a, b) = 1 ≤ 2(1, 1, 3, 3) : dist(A[1, 1], B[3, 3]) = dist(a, b) = 1 ≤ 2(2, 2, 1, 1) : dist(A[2, 2], B[1, 1]) = dist(b, a) = 1 ≤ 2(2, 2, 2, 2) : dist(A[2, 2], B[2, 2]) = dist(b, b) = 0 ≤ 2(2, 2, 3, 3) : dist(A[2, 2], B[3, 3]) = dist(b, b) = 0 ≤ 2(3, 3, 1, 1) : dist(A[3, 3], B[1, 1]) = dist(a, a) = 0 ≤ 2(3, 3, 2, 2) : dist(A[3, 3], B[2, 2]) = dist(a, b) = 1 ≤ 2(3, 3, 3, 3) : dist(A[3, 3], B[3, 3]) = dist(a, b) = 1 ≤ 2(1, 2, 1, 2) : dist(A[1, 2], B[1, 2]) = dist(ab, ab) = 0 ≤ 2(1, 2, 2, 3) : dist(A[1, 2], B[2, 3]) = dist(ab, bb) = 1 ≤ 2(2, 3, 1, 2) : dist(A[2, 3], B[1, 2]) = dist(ba, ab) = 2 ≤ 2(2, 3, 2, 3) : dist(A[2, 3], B[2, 3]) = dist(ba, bb) = 1 ≤ 2(1, 3, 1, 3) : dist(A[1, 3], B[1, 3]) = dist(aba, abb) = 1 ≤ 2
+Example case 2: The four (1, 3, 1, 3) no longer satisfies the conditions, because(1, 3, 1, 3) : dist(A[1, 3], B[1, 3]) = dist(abc, def) = 3 > 2
+",witua,laycurse,http://discuss.codechef.com/problems/AMSTRING,"['witua', 'cook33', 'sliding-window', 'easy', 'strings']",            28-03-2013</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+1190,BOUQUET,The Largest Bouquet,/problems/BOUQUET,easy,"
+All submissions for this problem are available. Read problems statements in Mandarin Chinese, Russian and Vietnamese as well.
+It's autumn now, the time of the leaf fall.
+Sergey likes to collect fallen leaves in autumn. In his city, he can find fallen leaves of maple, oak and poplar. These leaves can be of three different colors: green, yellow or red.
+Sergey has collected some leaves of each type and color. Now he wants to create the biggest nice bouquet from them. He considers the bouquet nice iff all the leaves in it are either from the same type of tree or of the same color (or both). Moreover, he doesn't want to create a bouquet with even number of leaves in it, since this kind of bouquets are considered to attract bad luck. However, if it's impossible to make any nice bouquet, he won't do anything, thus, obtaining a bouquet with zero leaves.
+Please help Sergey to find the maximal number of leaves he can have in a nice bouquet, which satisfies all the above mentioned requirements.
+Please note that Sergey doesn't have to use all the leaves of the same color or of the same type. For example, if he has 20 maple leaves, he can still create a bouquet of 19 leaves.
+Input
+IThe first line of the input contains an integer T denoting the number of test cases. The description of T test cases follows.""
+The first line of each test case contains three space-separated integers MG MY MR denoting the number of green, yellow and red maple leaves respectively.
+The second line contains three space-separated integers OG OY OR denoting the number of green, yellow and red oak leaves respectively.
+The third line of each test case contains three space-separated integers PG PY PR denoting the number of green, yellow and red poplar leaves respectively.
+Output
+For each test case, output a single line containing the maximal amount of flowers in nice bouquet, satisfying all conditions or 0 if it's impossible to create any bouquet, satisfying the conditions.
+Constraints
+
+
+1 ≤ T ≤ 10000
+Subtask 1 (50 points): 0 ≤ MG, MY, MR, OG, OY, OR, PG, PY, PR ≤ 5
+Subtask 2 (50 points): 0 ≤ MG, MY, MR, OG, OY, OR, PG, PY, PR ≤ 109
+
+ 
+Example
+Input:
+1
+1 2 3
+3 2 1
+1 3 4
+
+Output:
 7
- ",anhdq,subra,http://discuss.codechef.com/problems/DIGFORST,"['may12', 'hard', 'anhdq']",            22-08-2011</td>        <,            3 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+
+Explanation
+Example case 1. We can create a bouquet with 7 leaves, for example, by collecting all yellow leaves. This is not the only way to create the nice bouquet with 7 leaves (for example, Sergey can use all but one red leaves), but it is impossible to create a nice bouquet with more than 7 leaves. ",xcwgf666,mgch,,"['xcwgf666', 'ltime41', 'cakewalk']",            14-10-2016</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYPY, PYTH, PYTH 3.4, RUBY, SCALA, SCM chicken, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+1209,TRICONT,Chef and Guard Towers,/problems/TRICONT,hard,"
+All submissions for this problem are available. Read problems statements in Mandarin Chinese, Russian and Vietnamese as well.
+Chef holds all his secret recipes inside his house. For this reason, Chef wants to make his house secure. To do so, Chef wants to install guard towers in his house.
+Unfortunately, due to high costs, Chef can only activate 3 guard towers each night. Chef considers his house safe if the triangle formed by these 3 guard towers as vertices strictly contains his house. Chef's house is located at (0, 0).
+On the ith day, Chef plans to install a guard tower at location (xi, yi). Chef wants to know how effective each installation is. Specifically, after every installation, Chef wants to know the number of subsets of 3 guard towers he can activate so that his house becomes safe. Please help him answer this question!
+This is an online problem, so you won't get the next point unless you answer the question first. Don't forget to flush the output after every print statement. Please see the note section for details about how to flush the standard output.!
+Input
+The first line of input contains a single integer N. The next N lines describe the points.
+The ith line contains two integers xi and yi denoting the location of Chef's ith guard tower, (xi, yi).
+Output
+Output N lines. The ith line must contain a single integer, the answer to Chef's question after the ith installation.
+Constraints
+
+|xi|, |yi| ≤ 106
+The points are distinct.
+(xi, yi) ≠ (0, 0)
+
+Subtasks
+
+Subtask #1: (11 points) 3 ≤ N ≤ 1000
+Subtask #2: (24 points) 3 ≤ N ≤ 12000
+Subtask #3: (65 points) 3 ≤ N ≤ 400000
+
+Example
+Input:
+6
+2 3
+3 2
+-1 -1
+3 3
+4 1
+5 5
+
+
+Output:
+0
+0
+1
+1
+2
+2
+
+Explanation
+
+
+After the first and second installations, there aren't enough guard towers for Chef to choose from.
+After the third and fourth installations, there is one set of guard towers that make Chef's house safe: {(2, 3), (3, 2), (-1, -1)}.
+After the fifth and sixth installations, there are two sets of guard towers that make Chef's house safe: {(2, 3), (3, 2), (-1, -1)} and {(2, 3), (4, 1), (-1, -1)}.
+
+
+Note
+
+You can flush the standard output in C++ by writing fflush(stdout).
+In Java, you can do that by System.out.flush(). Please read the documentations of a particular language for more details.
+ ",kevinsogo,xcwgf666,http://discuss.codechef.com/problems/TRICONT,"['aug16', 'binary-search', 'kevinsogo', 'sqrt-decomp', 'hard']",            2-07-2016</td>        <,            9 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYPY, PYTH, PYTH 3.4, RUBY, SCALA, SCM chicken, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+1295,XRMTRX,Xor Matrix,/problems/XRMTRX,hard,"
+All submissions for this problem are available. Read problems statements in Mandarin Chinese  and Russian.
+Let's consider a square matrix of size N × N, where N = R −­­­­­­­­­­­ L + 1. We will enumerate the columns of this matrix with consecutive integers from L to R (the leftmost column will be assigned number L and the rightmost - number R). In similar manner we will enumerate rows with the same integers (the top row will be assigned number L and the bottom row - number R).
+Every cell of this matrix has an integer written inside it. The cell at the intersection of row X and column Y has integer (X xor Y) written inside.
+Two cells are called adjacent if and only if they have a common side. That way every inner cell have 4 neighbors and any of four corner cells have 2 neighbors.
+A walk is a sequence of cells C0, C1, C2, ..., CK, where for every 1 ≤ i ≤ K the cells Ci-1 and Ci are adjacent and for every 0 ≤ j ≤ K the number written inside cell Cj is equal j. The number K is the length of that walk.
+Your task is for given L and R values, find the maximal possible value of K, as well as the count C of different walks with that maximal length. As the value of C could be very large, output it modulo (109 + 7).
+Input
+The first line of the input contains an integer T denoting the number of test cases. 
+The description of T test cases follows. 
+For each test case, the only line of input contains two integers L and R.
+Output
+For each test case, output a single line containing two integers K and C. The value of C should be printed modulo (109 + 7).
+Constraints
+
+1 ≤ T ≤ 20 000
+1 ≤ L ≤ R ≤ 1018
+
+Subtasks
+
+Subtask #1: 1 ≤ T ≤ 500; 0 ≤ R - L ≤ 300 (8 points)
+Subtask #2: original constraints, only the value of K will be checked. (24 points)
+Subtask #3: original constraints (68 points)
+
+Example
+Input:
+4
+1 1
+1 2
+1 3
+2 3
+
+Output:
+0 1
+0 2
+3 4
+1 4
+ 
+Explanation
+Example case 1. The matrix contains just one cell, so, there is no possibility to make a single move, thus K = 0. We have just one possibility - to start the walk at the only cell and to end it immediately.
+Example case 2. The matrix doesn't contains a cell with number one inside, so, there once again is no possibility to make a single move, thus K = 0. Our walk is just a single cell with number zero inside and there are two such cells, thus C = 2. The matrix in this case looks like this:
+
+(1 xor 1)   (1 xor 2)          =          0 3
+(2 xor 1)   (2 xor 2)          =          3 0
+
+Example case 3. The four possible walks are:
+0 3 2               0 3 2               0 3 2               0 3 2
+3 0 1               3 0 1               3 0 1               3 0 1
+2 1 0               2 1 0               2 1 0               2 1 0
+
+Example case 4. The four possible walks are:
+0 1                   0 1                   0 1                   0 1
+1 0                   1 0                   1 0                   1 0
+ ",alex_2oo8,pushkarmishra,http://discuss.codechef.com/problems/XRMTRX,"['feb15', 'medium-hard', 'ad-hoc', 'alex_2oo8']",            13-01-2015</td>        <,            2 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYPY, PYTH, PYTH 3.4, RUBY, SCALA, SCM chicken, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+1326,AHWORK,Akhil And Pending Homework,/problems/AHWORK,medium,"
+
+                    function formatTime(ts) {
+                      now = new Date(ts);
+
+                      localtime = new Date();
+                      hour = now.getHours();
+                      min = now.getMinutes();
+                      sec = now.getSeconds();
+
+                      if (min <= 9) {
+                        min = ""0"" + min;
+                      }
+                      if (sec <= 9) {
+                        sec = ""0"" + sec;
+                      }
+                      if (hour > 12) {
+                        hour = hour - 12;
+                        add = "" PM"";
+                      } else {
+                        hour = hour;
+                        add = "" AM"";
+                      }
+                      if (hour == 12) {
+                        add = "" PM"";
+                      }
+                      if (hour == 00) {
+                        hour = ""12"";
+                      }
+
+                      $('#server-time').html(((hour<=9) ? ""0"" + hour : hour) + "":"" + min + "":"" + sec + add);
+
+                      nextSec = (now.getTime() + 1000);
+
+                      setTimeout(""formatTime(""+nextSec+"")"", 1000);
+                    }
+                    function getDtTimeZone()
+                    {
+                      var rightNow = new Date();
+                      var toDay = new Date(rightNow.getFullYear(), 0, 1, 0, 0, 0, 0);
+                      var temp = toDay.toGMTString();
+                      var date2 = new Date(temp.substring(0, temp.lastIndexOf("" "") -1));
+                      var stdTime = (toDay - date2) / (1000 * 60 * 60);
+                      return stdTime;
+                    }
+/*var d=new Date();
+$.ajax({
+url: '/umtza',
+type:'POST',
+data: 'umtza='+d.toString(),
+});
+*/
+
+CodeChef is a non-commercial competitive programming community
+
+
+
+
+About CodeChef
+About Directi
+CEO's Corner
+C-Programming
+Programming Languages
+Contact Us
+
+
+© 2009 Directi Group.  All Rights Reserved.  CodeChef uses SPOJ © by Sphere Research Labs
+In order to report copyright violations of any kind, send in an email to copyright@codechef.com
+
+
+
+The time now is: 
+
+        formatTime('September 01, 2014 16:46:08');
+      
+
+
+
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-53602-42']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  
+
+
+    /* <![CDATA[ */
+    var google_conversion_id = 1066618556;
+    var google_conversion_language = ""en"";
+    var google_conversion_format = ""3"";
+    var google_conversion_color = ""666666"";
+    var google_conversion_label = ""gbUUCPTlhAIQvJ3N_AM"";
+    var google_conversion_value = 0;
+    /* ]]> */
+  
+
+
+
+
+
+
+
+
+
+    /* <![CDATA[ */
+    var google_conversion_id = 968176136;
+    var google_conversion_language = ""en"";
+    var google_conversion_format = ""3"";
+    var google_conversion_color = ""ffffff"";
+    var google_conversion_label = ""iDk7CPDZ7wMQiOTUzQM"";
+    var google_conversion_value = 0;
+    /* ]]> */
+  
+
+
+
+
+
+
+
+
+CodeChef - A Platform for Aspiring Programmers
+CodeChef was created as a platform to help programmers make it big in the world of algorithms, computer programming and programming contests. At CodeChef we work hard to revive the geek in you by hosting a programming contest at the start of the month and another smaller programming challenge in the middle of the month. We also aim to have training sessions and discussions related to algorithms, binary search, technicalities like array size and the likes. Apart from providing a platform for programming competitions, CodeChef also has various algorithm tutorials and forum discussions to help those who are new to the world of computer programming.
+
+Practice Section - A Place to hone your 'Computer Programming Skills'
+Try your hand at one of our many practice problems and submit your solution in a language of your choice. Our programming contest judge accepts solutions in over 35+ programming languages. Preparing for coding contests were never this much fun! Receive points, and move up through the CodeChef ranks. Use our practice section to better prepare yourself for the multiple programming challenges that take place through-out the month on CodeChef. 
+
+Compete - Monthly Programming Contests and Cook-offs
+Here is where you can show off your computer programming skills. Take part in our 10 day long monthly coding contest and the shorter format Cook-off coding contest. Put yourself up for recognition and win great prizes. Our programming contests have prizes worth up to Rs.20,000 and $700lots more CodeChef goodies up for grabs. 
+
+Discuss
+Are you new to computer programming? Do you need help with algorithms? Then be a part of CodeChef's Forums and interact with all our programmers - they love helping out other programmers and sharing their ideas. Have discussions around binary search, array size, branch-and-bound, Dijkstra's algorithm, Encryption algorithm and more by visiting the CodeChef Forums and Wiki section.
+
+CodeChef Community
+As part of our Educational initiative, we give institutes the opportunity to associate with CodeChef in the form of Campus Chapters. Hosting online programming competitions is not the only feature on CodeChef. You can also host a coding contest for your institute on CodeChef, organize an algorithm event and be a guest author on our blog. 
+
+Go For Gold
+The Go for Gold Initiative was launched about a year after CodeChef was incepted, to help prepare Indian students for the ACM ICPC World Finals competition. In the run up to the ACM ICPC competition, the Go for Gold initiative uses CodeChef as a platform to train students for the ACM ICPC competition via multiple warm up contests. As an added incentive the Go for Gold initiative is also offering over Rs.8 lacs to the Indian team that beats the 29th position at the ACM ICPC world finals. Find out more about the Go for Gold and the ACM ICPC competition here.
+ ",amitpandeykgp,prateekg603,http://discuss.codechef.com/problems/AHWORK,"['amitpandeykgp', 'dp', 'ltime36', 'strings']",            7-05-2016</td>        <,            1 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYPY, PYTH, PYTH 3.4, RUBY, SCALA, SCM chicken, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
+1363,AUTHEN,Authentication Failed,/problems/AUTHEN,hard,"
+All submissions for this problem are available.
+Several days ago Chef decided to register at one of the programming sites. For registering he was asked to choose a nickname and a password. There was no problem with choosing a nickname (""Chef"" is his favorite nickname), but choosing a password in a secure way seemed to be a real problem for Chef. Therefore, he decided to write a program which would generate the password of length N consisting of small Latin letters a..z. Then Chef successfully registered at the site and saved the password in a file (as it was too hard to remember).
+Today Chef decided to visit the site once again. He entered his nickname, copied the password from the file... ""Authentication failed!"" was the answer. Trying to understand the reason of this, he noticed that the password in his file had length N+K instead of N! Sure enough of the source of the problem, Chef went straight to his young brother.
+And Chef was right, it was his brother who had inserted K random small Latin letters at some random positions (possibly at the beginning or at the end) of the password. Chef's brother didn't remember what exactly changes he had made at all, but he promised that he had done nothing besides inserting letters.
+As there is no other way to recover the password, Chef is now starting to remove every possible combination of K letters from the password trying to enter (when Chef obtains the same password as one of the previously entered passwords, he doesn't try to enter using this password again). Now the question is: what is the number of times Chef will receive ""Authentication failed!"" as the answer before successful entering in the worst case? As the answer might be quite large, output its remainder of division by 1009419529.
+Input
+The first line of the input file contains one integer T -- the number of test cases (no more than 10). Each test case is described by a line containing two integers N and K (1 ≤ N ≤ 10000, 1 ≤ K ≤ 100) separated by a single space, followed by a line containing a string of length N+K consisting of small Latin letters a..z.
+Output
+For each test case output just one line containing the required number modulo 1009419529.
+Example
+
+Input:
+3
+2 1
+aaa
+3 1
+abcd
+4 2
+ababab
+
+Output:
+0
+3
+10
+
+Explanation:
+
+In the first test case, the password is definitely ""aa"". In the second test case, it can be ""abc"", ""abd"", ""acd"" or ""bcd"", so in the worst case Chef will guess the correct option from the fourth attempt, thus making 3 unsuccessful attempts.
+",gennady.korotkevich,chmel_tolstiy,http://discuss.codechef.com/problems/AUTHEN,"['gennady.korotkevich', 'hard', 'cook19']",            17-01-2012</td>        <,            3 sec</td>        <,            50000 Bytes</td>        <,"            <td>ADA, ASM, BASH, BF, C, C99 strict, CAML, CLOJ, CLPS, CPP 4.3.2, CPP 4.9.2, CPP14, CS2, D, ERL, FORT, FS, GO, HASK, ICK, ICON, JAVA, JS, LISP clisp, LISP sbcl, LUA, NEM, NICE, NODEJS, PAS fpc, PAS gpc, PERL, PERL6, PHP, PIKE, PRLG, PYTH, PYTH 3.4, RUBY, SCALA, SCM guile, SCM qobi, ST, TCL, TEXT, WSPC</td>        <"
