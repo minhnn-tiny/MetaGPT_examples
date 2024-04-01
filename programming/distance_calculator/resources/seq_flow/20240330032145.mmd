@@ -1,0 +1,8 @@
+
+sequenceDiagram
+    participant Graph as Graph
+    participant Node as Node
+    Graph->>Node: __init__(name)
+    Graph->>Graph: add_node(node)
+    Graph->>Graph: add_edge(node1, node2, weight)
+    Graph->>Graph: get_shortest_path(source, destination)

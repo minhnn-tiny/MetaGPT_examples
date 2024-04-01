@@ -1,0 +1,145 @@
+
+
+                    function formatTime(ts) {
+                      now = new Date(ts);
+
+                      localtime = new Date();
+                      hour = now.getHours();
+                      min = now.getMinutes();
+                      sec = now.getSeconds();
+
+                      if (min <= 9) {
+                        min = "0" + min;
+                      }
+                      if (sec <= 9) {
+                        sec = "0" + sec;
+                      }
+                      if (hour > 12) {
+                        hour = hour - 12;
+                        add = " PM";
+                      } else {
+                        hour = hour;
+                        add = " AM";
+                      }
+                      if (hour == 12) {
+                        add = " PM";
+                      }
+                      if (hour == 00) {
+                        hour = "12";
+                      }
+
+                      $('#server-time').html(((hour<=9) ? "0" + hour : hour) + ":" + min + ":" + sec + add);
+
+                      nextSec = (now.getTime() + 1000);
+
+                      setTimeout("formatTime("+nextSec+")", 1000);
+                    }
+                    function getDtTimeZone()
+                    {
+                      var rightNow = new Date();
+                      var toDay = new Date(rightNow.getFullYear(), 0, 1, 0, 0, 0, 0);
+                      var temp = toDay.toGMTString();
+                      var date2 = new Date(temp.substring(0, temp.lastIndexOf(" ") -1));
+                      var stdTime = (toDay - date2) / (1000 * 60 * 60);
+                      return stdTime;
+                    }
+/*var d=new Date();
+$.ajax({
+url: '/umtza',
+type:'POST',
+data: 'umtza='+d.toString(),
+});
+*/
+
+CodeChef is a non-commercial competitive programming community
+
+
+
+
+About CodeChef
+About Directi
+CEO's Corner
+C-Programming
+Programming Languages
+Contact Us
+
+
+© 2009 Directi Group.  All Rights Reserved.  CodeChef uses SPOJ © by Sphere Research Labs
+In order to report copyright violations of any kind, send in an email to copyright@codechef.com
+
+
+
+The time now is: 
+
+        formatTime('September 01, 2014 16:46:08');
+      
+
+
+
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-53602-42']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  
+
+
+    /* <![CDATA[ */
+    var google_conversion_id = 1066618556;
+    var google_conversion_language = "en";
+    var google_conversion_format = "3";
+    var google_conversion_color = "666666";
+    var google_conversion_label = "gbUUCPTlhAIQvJ3N_AM";
+    var google_conversion_value = 0;
+    /* ]]> */
+  
+
+
+
+
+
+
+
+
+
+    /* <![CDATA[ */
+    var google_conversion_id = 968176136;
+    var google_conversion_language = "en";
+    var google_conversion_format = "3";
+    var google_conversion_color = "ffffff";
+    var google_conversion_label = "iDk7CPDZ7wMQiOTUzQM";
+    var google_conversion_value = 0;
+    /* ]]> */
+  
+
+
+
+
+
+
+
+
+CodeChef - A Platform for Aspiring Programmers
+CodeChef was created as a platform to help programmers make it big in the world of algorithms, computer programming and programming contests. At CodeChef we work hard to revive the geek in you by hosting a programming contest at the start of the month and another smaller programming challenge in the middle of the month. We also aim to have training sessions and discussions related to algorithms, binary search, technicalities like array size and the likes. Apart from providing a platform for programming competitions, CodeChef also has various algorithm tutorials and forum discussions to help those who are new to the world of computer programming.
+
+Practice Section - A Place to hone your 'Computer Programming Skills'
+Try your hand at one of our many practice problems and submit your solution in a language of your choice. Our programming contest judge accepts solutions in over 35+ programming languages. Preparing for coding contests were never this much fun! Receive points, and move up through the CodeChef ranks. Use our practice section to better prepare yourself for the multiple programming challenges that take place through-out the month on CodeChef. 
+
+Compete - Monthly Programming Contests and Cook-offs
+Here is where you can show off your computer programming skills. Take part in our 10 day long monthly coding contest and the shorter format Cook-off coding contest. Put yourself up for recognition and win great prizes. Our programming contests have prizes worth up to Rs.20,000 and $700lots more CodeChef goodies up for grabs. 
+
+Discuss
+Are you new to computer programming? Do you need help with algorithms? Then be a part of CodeChef's Forums and interact with all our programmers - they love helping out other programmers and sharing their ideas. Have discussions around binary search, array size, branch-and-bound, Dijkstra's algorithm, Encryption algorithm and more by visiting the CodeChef Forums and Wiki section.
+
+CodeChef Community
+As part of our Educational initiative, we give institutes the opportunity to associate with CodeChef in the form of Campus Chapters. Hosting online programming competitions is not the only feature on CodeChef. You can also host a coding contest for your institute on CodeChef, organize an algorithm event and be a guest author on our blog. 
+
+Go For Gold
+The Go for Gold Initiative was launched about a year after CodeChef was incepted, to help prepare Indian students for the ACM ICPC World Finals competition. In the run up to the ACM ICPC competition, the Go for Gold initiative uses CodeChef as a platform to train students for the ACM ICPC competition via multiple warm up contests. As an added incentive the Go for Gold initiative is also offering over Rs.8 lacs to the Indian team that beats the 29th position at the ACM ICPC world finals. Find out more about the Go for Gold and the ACM ICPC competition here.
+ 

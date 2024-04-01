@@ -1,0 +1,10 @@
+
+sequenceDiagram
+    participant Solution
+    Solution->>Solution: __init__(default_rate, minutes, plans)
+    Solution->>Solution: solve()
+    Solution->>Plan: get_total_cost(minutes)
+    alt best_cost < default_rate * minutes
+        Solution->>Solution: return index of best_plan + 1
+    else
+        Solution->>Solution: return 0

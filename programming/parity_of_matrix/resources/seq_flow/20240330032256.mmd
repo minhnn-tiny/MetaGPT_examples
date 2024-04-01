@@ -1,0 +1,10 @@
+
+sequenceDiagram
+    participant Main
+    participant Matrix
+    Main->>Matrix: __init__(matrix)
+    loop for each query
+        Main->>Matrix: remove_row_col(x, y)
+        Main->>Matrix: get_parity(x, y)
+        Main-->>Console: print(parity)
+    end

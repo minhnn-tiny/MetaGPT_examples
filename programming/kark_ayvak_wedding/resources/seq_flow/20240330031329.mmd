@@ -1,0 +1,8 @@
+
+sequenceDiagram
+    participant M as Main
+    participant G as Game
+    M->>G: __init__(grid, hearts)
+    G->>G: calculate_expected_hearts()
+    M->>G: get_expected_hearts(i, j)
+    G-->>M: return expected_hearts

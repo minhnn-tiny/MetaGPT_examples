@@ -1,0 +1,14 @@
+
+classDiagram
+    class Chef:
+        - name: str
+        - prize_tokens: int
+        +__init__(name: str, prize_tokens: int)
+        +get_name() str
+        +get_prize_tokens() int
+        +set_prize_tokens(prize_tokens: int)
+    class Tournament:
+        - chefs: List[Chef]
+        +__init__(chefs: List[Chef])
+        +simulate() List[Chef]
+        +get_expected_difference() float

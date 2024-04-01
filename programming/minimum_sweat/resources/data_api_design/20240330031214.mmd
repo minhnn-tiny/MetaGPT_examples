@@ -1,0 +1,42 @@
+
+classDiagram
+    class Main {
+        -Graph graph
+        -AStar a_star
+        +main() str
+    }
+    class Graph {
+        -Nodes nodes
+        -Edges edges
+        +add_node(node: Node)
+        +add_edge(edge: Edge)
+        +get_node(node_id: str) Node
+        +get_edge(edge_id: str) Edge
+    }
+    class Node {
+        -id: str
+        -x: float
+        -y: float
+        +__init__(id: str, x: float, y: float)
+    }
+    class Edge {
+        -id: str
+        -source: Node
+        -destination: Node
+        -weight: float
+        +__init__(id: str, source: Node, destination: Node, weight: float)
+    }
+    class AStar {
+        -graph: Graph
+        -start_node: Node
+        -goal_node: Node
+        +__init__(graph: Graph, start_node: Node, goal_node: Node)
+        +search() list
+    }
+    Main --> Graph
+    Main --> AStar
+    Graph --> Node
+    Graph --> Edge
+    AStar --> Graph
+    AStar --> Node
+    AStar --> Node

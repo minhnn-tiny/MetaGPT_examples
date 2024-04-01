@@ -1,0 +1,10 @@
+
+classDiagram
+    class Matrix:
+        -matrix: List[List[int]]
+        -prefix_sum_rows: List[List[int]]
+        -prefix_sum_cols: List[List[int]]
+        +__init__(matrix: List[List[int]])
+        +get_sum(x1: int, y1: int, x2: int, y2: int) -> int
+        +remove_row_col(x: int, y: int)
+        +get_parity(x: int, y: int) -> str

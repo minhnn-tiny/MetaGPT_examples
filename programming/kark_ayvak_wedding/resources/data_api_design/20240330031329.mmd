@@ -1,0 +1,15 @@
+
+classDiagram
+    class Main {
+        -game: Game
+        +main() None
+    }
+    class Game {
+        -grid: List[List[int]]
+        -hearts: List[int]
+        -dp: List[List[float]]
+        +__init__(grid: List[List[int]], hearts: List[int])
+        +calculate_expected_hearts() List[List[float]]
+        +get_expected_hearts(i: int, j: int) float
+    }
+    Main --> Game

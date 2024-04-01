@@ -1,0 +1,14 @@
+
+classDiagram
+    class Graph {
+        -nodes: Dict[str, Node]
+        -edges: Dict[Tuple[str, str], int]
+        +add_node(node: Node)
+        +add_edge(node1: str, node2: str, weight: int)
+        +get_shortest_path(source: str, destination: str) List[str]
+    }
+    class Node {
+        -name: str
+        -neighbors: Dict[str, int]
+        +__init__(name: str)
+    }

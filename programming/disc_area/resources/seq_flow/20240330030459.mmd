@@ -1,0 +1,12 @@
+
+sequenceDiagram
+    participant Main
+    participant Disc
+    Main->>Disc: create_discs()
+    Disc-->>Main: return discs
+    loop for each disc1 in discs
+        Main->>Disc: get_area(disc2)
+        Disc-->>Main: return area
+        Main: sum area
+    end
+    Main->>Disc: print_area()

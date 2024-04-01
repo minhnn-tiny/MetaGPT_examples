@@ -1,0 +1,15 @@
+
+classDiagram
+    class Program {
+        -a: int
+        -b: int
+        +__init__(a: int, b: int)
+        +__lt__(other: Program) bool
+    }
+    class Solution {
+        -programs: list[Program]
+        -optimal_time: int
+        -start_times: list[tuple[int, int]]
+        +__init__(programs: list[Program])
+        +solve() tuple[int, list[tuple[int, int]]]
+    }

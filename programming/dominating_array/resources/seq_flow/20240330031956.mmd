@@ -1,0 +1,18 @@
+
+sequenceDiagram
+    participant Solution
+    Solution->>Solution: isDominating(arr)
+    Solution->>Solution: create freq hash map
+    loop for each el in arr
+        Solution->>Solution: if el not in freq
+            Solution->>Solution: freq[el] = 0
+        Solution->>Solution: freq[el] += 1
+    end
+    Solution->>Solution: max_freq = 0
+    Solution->>Solution: max_el = None
+    loop for each el, freq in freq.items()
+        Solution->>Solution: if freq > max_freq
+            Solution->>Solution: max_freq = freq
+            Solution->>Solution: max_el = el
+    end
+    Solution->>Solution: return max_freq > len(arr) // 2

@@ -1,0 +1,14 @@
+
+classDiagram
+    class Main {
+        -set set
+        +main() int
+    }
+    class Set {
+        -vector<int> elements
+        +Set()
+        +add(element: int)
+        +erase(element: int)
+        +sum() int
+    }
+    Main --> Set

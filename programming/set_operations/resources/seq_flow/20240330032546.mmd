@@ -1,0 +1,11 @@
+
+sequenceDiagram
+    participant M as Main
+    participant S as Set
+    M->>S: Set()
+    loop for each operation
+        M->>S: add(element) or erase(element)
+    end
+    M->>S: sum()
+    S-->>M: return sum
+    M-->>S: destroy()

@@ -1,0 +1,9 @@
+```sequenceDiagram
+participant Main
+participant PasswordRecovery
+Main->>PasswordRecovery: __init__(password, k)
+PasswordRecovery->>PasswordRecovery: generate_combinations()
+PasswordRecovery->>PasswordRecovery: find_correct_combination()
+PasswordRecovery->>PasswordRecovery: count_unsuccessful_attempts()
+Main->>PasswordRecovery: get_unsuccessful_attempts()
+```

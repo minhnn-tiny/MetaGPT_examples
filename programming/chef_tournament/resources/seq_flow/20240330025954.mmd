@@ -1,0 +1,11 @@
+
+sequenceDiagram
+    participant Main
+    participant Tournament
+    participant Chef
+    Main->>Tournament: __init__(chefs)
+    Tournament->>Chef: __init__(name, prize_tokens)
+    Tournament->>Tournament: simulate()
+    Tournament->>Chef: get_prize_tokens()
+    Tournament->>Tournament: get_expected_difference()
+    Tournament-->>Main: return expected_difference

@@ -1,0 +1,1 @@
+{"Required Python packages":[],"Required Other language third-party packages":[],"Logic Analysis":[["game.py","Contains Game class and calculate_expected_hearts, get_expected_hearts functions"],["main.py","Contains main function, from game import Game"]],"Task list":["game.py","main.py"],"Full API spec":"No API spec available","Shared Knowledge":"None","Anything UNCLEAR":"None"}
